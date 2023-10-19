@@ -13,8 +13,7 @@ class DropdownMenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentDropdownMenuBinding.inflate(layoutInflater)
-
+        val binding = FragmentDropdownMenuBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 }

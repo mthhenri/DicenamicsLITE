@@ -7,10 +7,12 @@
 
     <ImageButton
         android:id="@+id/btnMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:src="@android:drawable/btn_star" />
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/barras_menu" />
 
     <Button
         android:id="@+id/btnLogo"
@@ -26,9 +28,11 @@
 
     <ImageButton
         android:id="@+id/btnUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:src="@android:drawable/btn_star" />
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/user_menu" />
 
 </LinearLayout>

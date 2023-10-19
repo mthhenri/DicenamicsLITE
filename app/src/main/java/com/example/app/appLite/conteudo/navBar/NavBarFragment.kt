@@ -8,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentContainer
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.example.app.R
 import com.example.app.appLite.AppLiteFragmentDirections
 import com.example.app.appLite.AppLiteViewModel
 import com.example.app.databinding.FragmentAppLiteBinding
+import com.example.app.databinding.FragmentDropdownMenuBinding
 import com.example.app.databinding.FragmentNavBarBinding
 
 class NavBarFragment : Fragment() {
@@ -23,9 +25,7 @@ class NavBarFragment : Fragment() {
         val binding = FragmentNavBarBinding.inflate(layoutInflater)
 
         binding.btnMenu.setOnClickListener{
-            val dropMenu = FragmentAppLiteBinding.inflate(layoutInflater)
-
-            //Fragment transiction
+            //Usar Fragment Transaction?
         }
 
         binding.btnLogo.setOnClickListener{
