@@ -15,10 +15,33 @@
             app:destination="@id/cadastroFragment"
             app:popUpTo="@id/cadastroFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/LoginToInicial"
+            app:destination="@id/appLiteFragment"
+            app:popUpTo="@id/appLiteFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/cadastroFragment"
         android:name="com.example.app.login.CadastroFragment"
         android:label="fragment_cadastro"
         tools:layout="@layout/fragment_cadastro" />
+    <fragment
+        android:id="@+id/appLiteFragment"
+        android:name="com.example.app.appLite.AppLiteFragment"
+        android:label="fragment_app_lite"
+        tools:layout="@layout/fragment_app_lite" >
+        <action
+            android:id="@+id/action_appLiteFragment_self2"
+            app:destination="@id/appLiteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navBarFragment"
+        android:name="com.example.app.appLite.conteudo.navBar.NavBarFragment"
+        android:label="fragment_nav_bar"
+        tools:layout="@layout/fragment_nav_bar" >
+        <action
+            android:id="@+id/LogoToInicial"
+            app:destination="@id/appLiteFragment" />
+    </fragment>
 </navigation>

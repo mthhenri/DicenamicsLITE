@@ -1,4 +1,4 @@
-package com.example.app.login
+package com.example.app.appLite.conteudo.navBar
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.app.R
-import com.example.app.databinding.FragmentLoginBinding
+import com.example.app.appLite.AppLiteFragmentDirections
+import com.example.app.databinding.FragmentNavBarBinding
 
-class LoginFragment : Fragment() {
+class NavBarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentLoginBinding.inflate(layoutInflater)
+        val binding = FragmentNavBarBinding.inflate(layoutInflater)
 
-        binding.btnCadastrar.setOnClickListener{
-            val action = LoginFragmentDirections.LoginToCadastro()
+        binding.btnMenu.setOnClickListener{
+
+        }
+
+        binding.btnLogo.setOnClickListener{
+            val action = AppLiteFragmentDirections.actionAppLiteFragmentSelf2()
             findNavController().navigate(action)
         }
 
-        binding.btnEntrar.setOnClickListener{
-            val action = LoginFragmentDirections.LoginToInicial()
-            findNavController().navigate(action)
+        binding.btnUsuario.setOnClickListener{
+
         }
+
         return binding.root
     }
 }

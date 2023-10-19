@@ -15,7 +15,6 @@ class InicialFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentInicialBinding.inflate(layoutInflater)
-
         return binding.root
     }
 }
