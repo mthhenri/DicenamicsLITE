@@ -16,6 +16,7 @@ class AppLiteFragment : Fragment() {
     ): View? {
         val binding = FragmentAppLiteBinding.inflate(layoutInflater)
 
+
         return binding.root
     }
 

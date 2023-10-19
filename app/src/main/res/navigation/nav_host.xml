@@ -32,16 +32,7 @@
         android:label="fragment_app_lite"
         tools:layout="@layout/fragment_app_lite" >
         <action
-            android:id="@+id/action_appLiteFragment_self2"
-            app:destination="@id/appLiteFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/navBarFragment"
-        android:name="com.example.app.appLite.conteudo.navBar.NavBarFragment"
-        android:label="fragment_nav_bar"
-        tools:layout="@layout/fragment_nav_bar" >
-        <action
-            android:id="@+id/LogoToInicial"
+            android:id="@+id/InitialToInitial"
             app:destination="@id/appLiteFragment" />
     </fragment>
 </navigation>
