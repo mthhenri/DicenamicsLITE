@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appLite.conteudo.menu.MenuFragment" >
+    tools:context=".appLite.conteudo.menu.MenuFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
         android:background="#009688"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".appLite.conteudo.navBar.NavBarFragment">
@@ -47,13 +51,36 @@
             android:src="@drawable/user_menu" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="277dp"
-        android:layout_marginBottom="552dp"
-        android:text="menu"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="208dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="502dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/btnPastas"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text=" - Pastas"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/btnDados"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text=" - Dados"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/btnRolagem"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:text=" - Rolagem Rápida"
+            android:textColor="#000000" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
