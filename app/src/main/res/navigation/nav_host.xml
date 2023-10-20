@@ -17,8 +17,8 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/LoginToInicial"
-            app:destination="@id/appLiteFragment"
-            app:popUpTo="@id/appLiteFragment"
+            app:destination="@id/inicialFragment"
+            app:popUpTo="@id/inicialFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -27,12 +27,66 @@
         android:label="fragment_cadastro"
         tools:layout="@layout/fragment_cadastro" />
     <fragment
-        android:id="@+id/appLiteFragment"
-        android:name="com.example.app.appLite.AppLiteFragment"
-        android:label="fragment_app_lite"
-        tools:layout="@layout/fragment_app_lite" >
+        android:id="@+id/inicialFragment"
+        android:name="com.example.app.appLite.conteudo.inicial.InicialFragment"
+        android:label="fragment_inicial"
+        tools:layout="@layout/fragment_inicial" >
         <action
-            android:id="@+id/InitialToInitial"
-            app:destination="@id/appLiteFragment" />
+            android:id="@+id/InicialToUsuario"
+            app:destination="@id/usuarioFragment"
+            app:popUpTo="@id/usuarioFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/ToInicial"
+            app:destination="@id/inicialFragment"
+            app:popUpTo="@id/inicialFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/InicialToMenu"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/usuarioFragment"
+        android:name="com.example.app.appLite.conteudo.usuario.UsuarioFragment"
+        android:label="fragment_usuario"
+        tools:layout="@layout/fragment_usuario" >
+        <action
+            android:id="@+id/UsuarioToInicial"
+            app:destination="@id/inicialFragment"
+            app:popUpTo="@id/inicialFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/ToUsuario"
+            app:destination="@id/usuarioFragment"
+            app:popUpTo="@id/usuarioFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/UsuarioToMenu"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.app.appLite.conteudo.menu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/ToMenu"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/MenuToUsuario"
+            app:destination="@id/usuarioFragment"
+            app:popUpTo="@id/usuarioFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/MenuToInicial"
+            app:destination="@id/inicialFragment"
+            app:popUpTo="@id/inicialFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>
