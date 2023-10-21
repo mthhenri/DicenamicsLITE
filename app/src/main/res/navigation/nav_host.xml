@@ -91,6 +91,9 @@
         <action
             android:id="@+id/MenuToDados"
             app:destination="@id/dadosFragment" />
+        <action
+            android:id="@+id/MenuToRolagemRapida"
+            app:destination="@id/rolagemRapidaFragment" />
     </fragment>
     <fragment
         android:id="@+id/dadosFragment"
@@ -127,5 +130,20 @@
         <action
             android:id="@+id/DadoCriarToUsuario"
             app:destination="@id/usuarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rolagemRapidaFragment"
+        android:name="com.example.app.appLite.conteudo.speedDados.RolagemRapidaFragment"
+        android:label="fragment_rolagem_rapida"
+        tools:layout="@layout/fragment_rolagem_rapida" >
+        <action
+            android:id="@+id/RolagemToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/RolagemToUsuario"
+            app:destination="@id/usuarioFragment" />
+        <action
+            android:id="@+id/RolagemToInicial"
+            app:destination="@id/inicialFragment" />
     </fragment>
 </navigation>

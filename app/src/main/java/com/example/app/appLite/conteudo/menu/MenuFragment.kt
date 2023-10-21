@@ -36,6 +36,10 @@ class MenuFragment : Fragment() {
             findNavController().navigate(MenuFragmentDirections.MenuToDados())
         }
 
+        binding.btnRollRapidaMenu.setOnClickListener {
+            findNavController().navigate(MenuFragmentDirections.MenuToRolagemRapida())
+        }
+
         return binding.root
     }
 }
