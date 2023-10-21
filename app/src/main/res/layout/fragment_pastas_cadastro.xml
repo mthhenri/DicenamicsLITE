@@ -17,116 +17,61 @@
         android:id="@+id/nome"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
         android:src="@drawable/dado_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="100dp" />
 
     <ImageView
         android:id="@+id/cor"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
         android:src="@drawable/texto_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="296dp" />
 
     <ImageView
         android:id="@+id/dados"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
         android:src="@drawable/d6_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cor" />
-
-    <ImageView
-        android:id="@+id/quantidade"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/numeros_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dados" />
-
-    <ImageView
-        android:id="@+id/modificador"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/modificador_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantidade" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="473dp" />
 
     <EditText
         android:id="@+id/textNomePastaCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="Icone"
+        android:hint="Nome"
         android:inputType="text"
-        app:layout_constraintStart_toEndOf="@+id/nome"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="100dp" />
 
     <EditText
         android:id="@+id/textDadoPastaCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="48dp"
         android:ems="10"
-        android:hint="Nome"
+        android:hint="Dados"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/textCorPastaCriar"
-        app:layout_constraintStart_toEndOf="@+id/cor"
-        app:layout_constraintTop_toBottomOf="@+id/textNomePastaCriar" />
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="473dp" />
 
     <EditText
         android:id="@+id/textCorPastaCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="49dp"
         android:ems="10"
-        android:hint="Faces"
+        android:hint="Cor"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/textQuantidadeDadoCriar"
-        app:layout_constraintStart_toEndOf="@+id/dados" />
-
-    <EditText
-        android:id="@+id/textQuantidadeDadoCriar"
-        android:layout_width="275dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="47dp"
-        android:ems="10"
-        android:hint="Quantidade"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/textModificadorDadoCriar"
-        app:layout_constraintStart_toEndOf="@+id/quantidade" />
-
-    <EditText
-        android:id="@+id/textModificadorDadoCriar"
-        android:layout_width="275dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="190dp"
-        android:ems="10"
-        android:hint="Modificador"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/modificador" />
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="296dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#009688"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:context=".appLite.conteudo.navBar.NavBarFragment">
 
         <ImageButton
@@ -174,25 +119,21 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
         android:text="Confirmar"
         app:icon="@android:drawable/ic_menu_save"
         app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4" />
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="651dp" />
 
     <Button
         android:id="@+id/btnCancelarCadastrarDado"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
         android:text="Cancelar"
         app:icon="@android:drawable/ic_menu_close_clear_cancel"
         app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4" />
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="651dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

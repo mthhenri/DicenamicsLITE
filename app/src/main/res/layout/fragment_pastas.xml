@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Dados"
+        android:text="Pastas"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -69,7 +69,7 @@
         tools:context=".appLite.conteudo.navBar.NavBarFragment">
 
         <ImageButton
-            android:id="@+id/btnMenuDados"
+            android:id="@+id/btnMenuPastas"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -79,7 +79,7 @@
             android:src="@drawable/barras_menu" />
 
         <Button
-            android:id="@+id/btnLogoDados"
+            android:id="@+id/btnLogoPastas"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -91,7 +91,7 @@
             android:textColor="#000000" />
 
         <ImageButton
-            android:id="@+id/btnUsuarioDados"
+            android:id="@+id/btnUsuarioPastas"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
