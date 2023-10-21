@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#40009688"
     android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/IconDado"
-        android:layout_width="72dp"
-        android:layout_height="35dp"
+    <ImageButton
+        android:id="@+id/btnRolarDado"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:src="@tools:sample/avatars"
-        app:srcCompat="@drawable/dados_icon" />
+        android:contentDescription="Rolar dado"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dados_icon" />
 
     <TextView
         android:id="@+id/txtDados"
         android:layout_width="302dp"
         android:layout_height="match_parent"
+        android:layout_marginStart="12dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Você não possui nenhum dado"
-        android:textAlignment="gravity" />
+        android:text="Nome do dado"
+        android:textAlignment="viewStart" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="97dp"
-        android:layout_height="match_parent"
+    <ImageButton
+        android:id="@+id/btnEditarDado"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:src="@tools:sample/avatars"
-        app:srcCompat="@drawable/editar" />
+        android:contentDescription="Editar dado"
+        android:scaleType="centerCrop"
+        android:src="@drawable/editar_icon" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="93dp"
-        android:layout_height="match_parent"
+    <ImageButton
+        android:id="@+id/btnDeletarDado"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:src="@tools:sample/avatars"
-        app:srcCompat="@drawable/deletar_icon" />
+        android:contentDescription="Deletar dado"
+        android:scaleType="centerCrop"
+        android:src="@drawable/deletar_icon" />
 
 </LinearLayout>

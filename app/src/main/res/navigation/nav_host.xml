@@ -88,5 +88,44 @@
             app:destination="@id/inicialFragment"
             app:popUpTo="@id/inicialFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/MenuToDados"
+            app:destination="@id/dadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dadosFragment"
+        android:name="com.example.app.appLite.conteudo.dados.DadosFragment"
+        android:label="fragment_dados"
+        tools:layout="@layout/fragment_dados" >
+        <action
+            android:id="@+id/DadosToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/DadosToInicial"
+            app:destination="@id/inicialFragment" />
+        <action
+            android:id="@+id/DadosToUsuario"
+            app:destination="@id/usuarioFragment" />
+        <action
+            android:id="@+id/DadosToDadoCriar"
+            app:destination="@id/dadoCadastroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dadoCadastroFragment"
+        android:name="com.example.app.appLite.conteudo.dados.DadoCadastroFragment"
+        android:label="fragment_dado_cadastro"
+        tools:layout="@layout/fragment_dado_cadastro" >
+        <action
+            android:id="@+id/DadoCriarToDados"
+            app:destination="@id/dadosFragment" />
+        <action
+            android:id="@+id/DadoCriarToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/DadoCriarToInicial"
+            app:destination="@id/inicialFragment" />
+        <action
+            android:id="@+id/DadoCriarToUsuario"
+            app:destination="@id/usuarioFragment" />
     </fragment>
 </navigation>

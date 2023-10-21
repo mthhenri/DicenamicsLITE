@@ -6,13 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".appLite.conteudo.menu.MenuFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-39dp">
+
+        <Button
+            android:id="@+id/btnDadosMenu"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="125dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginBottom="36dp"
+            android:text="Dados"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:icon="@drawable/dados_icon"
+            app:iconTint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/btnPastasMenu"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnRollRapidaMenu"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="125dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginBottom="140dp"
+            android:text="Rolagem Rápida"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:icon="@drawable/speed_icon"
+            app:iconTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnPastasMenu"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="125dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="28dp"
+            android:text="Pastas"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:icon="@drawable/pasta_icon"
+            app:iconTint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/btnRollRapidaMenu"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="242dp"
         android:background="#009688"
-        app:layout_constraintBottom_toTopOf="@+id/btnDados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,56 +110,5 @@
             android:scaleType="fitCenter"
             android:src="@drawable/user_menu" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/btnPastas"
-        android:layout_width="350dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="#40009688"
-        android:gravity="center"
-        android:text=" - Pastas"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/btnDados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
-    <TextView
-        android:id="@+id/btnRolagem"
-        android:layout_width="350dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
-        android:background="#40009688"
-        android:gravity="center"
-        android:text=" - Rolagem Rápida"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDados" />
-
-    <TextView
-        android:id="@+id/btnDados"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="279dp"
-        android:background="#40009688"
-        android:gravity="center"
-        android:text="- Dados"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

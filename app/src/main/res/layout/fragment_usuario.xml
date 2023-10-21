@@ -6,9 +6,188 @@
     android:layout_height="match_parent"
     tools:context=".appLite.conteudo.usuario.UsuarioFragment">
 
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="153dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:src="@drawable/sem_foto" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/altImg"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="52dp"
+        android:clickable="true"
+        android:src="@android:drawable/stat_sys_download"
+        app:layout_constraintStart_toEndOf="@+id/img"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/alterImgTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="70dp"
+        android:text="Alterar Imagem"
+        app:layout_constraintStart_toEndOf="@+id/altImg"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/txtOldUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:text="Username Antigo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img" />
+
+    <TextView
+        android:id="@+id/txtOldApe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Apelido Antigo"
+        app:layout_constraintBottom_toTopOf="@+id/verificaApe"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtOldSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Senha Antiga"
+        app:layout_constraintBottom_toTopOf="@+id/verficaSenha"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/verficaSenha"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="111dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNewSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha Nova"
+        app:layout_constraintBottom_toTopOf="@+id/newSenha"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <EditText
+        android:id="@+id/newSenha"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="111dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <EditText
+        android:id="@+id/verificaApe"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="39dp"
+        android:ems="10"
+        android:hint="Apelido"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtOldSenha"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNewApe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apelido Novo"
+        app:layout_constraintBottom_toTopOf="@+id/editApe"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <EditText
+        android:id="@+id/editApe"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="39dp"
+        android:ems="10"
+        android:hint="Apelido"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtNewSenha"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/txtNewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username Novo"
+        app:layout_constraintBottom_toTopOf="@+id/editUser"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <EditText
+        android:id="@+id/editUser"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="39dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtNewApe"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <EditText
+        android:id="@+id/verificaUser"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="39dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtOldApe"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSalvar"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="Salvar"
+        android:textAlignment="viewEnd"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="Cancelar"
+        android:textAlignment="viewEnd"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:background="#009688"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,240 +228,18 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="153dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtOldUser"
-        app:layout_constraintEnd_toStartOf="@+id/altImg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:src="@tools:sample/avatars" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/altImg"
-        android:layout_width="56dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="80dp"
-        android:clickable="true"
-        android:src="@android:drawable/stat_sys_download"
-        app:layout_constraintBottom_toTopOf="@+id/verificaUser"
-        app:layout_constraintEnd_toStartOf="@+id/alterImgTxt"
-        app:layout_constraintStart_toEndOf="@+id/img"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/alterImgTxt"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="533dp"
-        android:text="Alterar Imagem"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/altImg"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
 
-    <EditText
-        android:id="@+id/editUser"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="188dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtOldApe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtOldApe"
-        app:layout_constraintTop_toBottomOf="@+id/txtNewUser" />
-
-    <EditText
-        android:id="@+id/verificaUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="185dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtNewUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOldUser" />
-
-    <TextView
-        android:id="@+id/txtNewUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="114dp"
-        android:text="Username Novo"
-        app:layout_constraintBottom_toTopOf="@+id/editUser"
-        app:layout_constraintEnd_toEndOf="@+id/editUser"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verificaUser" />
-
-    <TextView
-        android:id="@+id/txtNewApe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="1dp"
-        android:text="Apelido Novo"
-        app:layout_constraintBottom_toTopOf="@+id/editApe"
-        app:layout_constraintEnd_toEndOf="@+id/editApe"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verificaApe" />
-
-    <EditText
-        android:id="@+id/editApe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="187dp"
-        android:ems="10"
-        android:hint="Apelido"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtOldSenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNewApe" />
-
-    <TextView
-        android:id="@+id/txtOldSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="127dp"
-        android:text="Senha Antiga"
-        app:layout_constraintBottom_toTopOf="@+id/verficaSenha"
-        app:layout_constraintEnd_toEndOf="@+id/verficaSenha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editApe" />
-
-    <TextView
-        android:id="@+id/txtOldUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="287dp"
-        android:text="Username Antigo"
-        app:layout_constraintBottom_toTopOf="@+id/verificaUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img" />
-
-    <EditText
-        android:id="@+id/verificaApe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="187dp"
-        android:ems="10"
-        android:hint="Apelido"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtNewApe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOldApe" />
-
-    <TextView
-        android:id="@+id/txtOldApe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="116dp"
-        android:text="Apelido Antigo"
-        app:layout_constraintBottom_toTopOf="@+id/verificaApe"
-        app:layout_constraintEnd_toEndOf="@+id/verificaApe"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editUser" />
-
-    <TextView
-        android:id="@+id/txtNewSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="135dp"
-        android:text="Senha Nova"
-        app:layout_constraintBottom_toTopOf="@+id/newSenha"
-        app:layout_constraintEnd_toEndOf="@+id/newSenha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verficaSenha" />
-
-    <EditText
-        android:id="@+id/newSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="187dp"
-        android:layout_marginBottom="62dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNewSenha" />
-
-    <EditText
-        android:id="@+id/verficaSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="184dp"
-        android:layout_marginBottom="1dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/txtNewSenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txtNewSenha"
-        app:layout_constraintTop_toBottomOf="@+id/txtOldSenha" />
-
-    <Button
-        android:id="@+id/btnSalvar"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="106dp"
-        android:text="Salvar"
-        android:textAlignment="viewEnd"
-        app:icon="@android:drawable/ic_menu_save"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newSenha" />
-
-    <Button
-        android:id="@+id/btnCancelar"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="537dp"
-        android:layout_marginEnd="26dp"
-        android:text="Cancelar"
-        android:textAlignment="viewEnd"
-        app:icon="@android:drawable/ic_menu_close_clear_cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alterImgTxt" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

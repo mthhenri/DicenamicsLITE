@@ -32,6 +32,10 @@ class MenuFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.btnDadosMenu.setOnClickListener {
+            findNavController().navigate(MenuFragmentDirections.MenuToDados())
+        }
+
         return binding.root
     }
 }

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".appLite.conteudo.dados.DadoCadastroFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/icone"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/dado_icone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+    <ImageView
+        android:id="@+id/nome"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/texto_icone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icone" />
+
+    <ImageView
+        android:id="@+id/faces"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/d6_icone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
+
+    <ImageView
+        android:id="@+id/quantidade"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/numeros_icone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/faces" />
+
+    <ImageView
+        android:id="@+id/modificador"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/modificador_icone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantidade" />
+
+    <EditText
+        android:id="@+id/textIconDadoCriar"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Icone"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/icone"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+    <EditText
+        android:id="@+id/textNomeDadoCriar"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textFacesDadoCriar"
+        app:layout_constraintStart_toEndOf="@+id/nome"
+        app:layout_constraintTop_toBottomOf="@+id/textIconDadoCriar" />
+
+    <EditText
+        android:id="@+id/textFacesDadoCriar"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="49dp"
+        android:ems="10"
+        android:hint="Faces"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textQuantidadeDadoCriar"
+        app:layout_constraintStart_toEndOf="@+id/faces" />
+
+    <EditText
+        android:id="@+id/textQuantidadeDadoCriar"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="47dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textModificadorDadoCriar"
+        app:layout_constraintStart_toEndOf="@+id/quantidade" />
+
+    <EditText
+        android:id="@+id/textModificadorDadoCriar"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="190dp"
+        android:ems="10"
+        android:hint="Modificador"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/modificador" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#009688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".appLite.conteudo.navBar.NavBarFragment">
+
+        <ImageButton
+            android:id="@+id/btnMenuDadoCriar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="Menu"
+            android:scaleType="fitCenter"
+            android:src="@drawable/barras_menu" />
+
+        <Button
+            android:id="@+id/btnLogoDadoCriar"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_weight="1"
+            android:text="Dicenamics LITE"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <ImageButton
+            android:id="@+id/btnUsuarioDadoCriar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="Usuário"
+            android:scaleType="fitCenter"
+            android:src="@drawable/user_menu" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+
+    <Button
+        android:id="@+id/btnConfirmarCadastrarDado"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Confirmar"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" />
+
+    <Button
+        android:id="@+id/btnCancelarCadastrarDado"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Cancelar"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,13 +18,11 @@ class LoginFragment : Fragment() {
         val binding = FragmentLoginBinding.inflate(layoutInflater)
 
         binding.btnCadastrar.setOnClickListener{
-            val action = LoginFragmentDirections.LoginToCadastro()
-            findNavController().navigate(action)
+            findNavController().navigate(LoginFragmentDirections.LoginToCadastro())
         }
 
         binding.btnEntrar.setOnClickListener{
-            val action = LoginFragmentDirections.LoginToInicial()
-            findNavController().navigate(action)
+            findNavController().navigate(LoginFragmentDirections.LoginToInicial())
         }
         return binding.root
     }
