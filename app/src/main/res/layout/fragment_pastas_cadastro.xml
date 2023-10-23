@@ -17,65 +17,106 @@
         android:id="@+id/nome"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/dado_icone"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="100dp" />
-
-    <ImageView
-        android:id="@+id/cor"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/texto_icone"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="296dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <ImageView
         android:id="@+id/dados"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="130dp"
         android:src="@drawable/d6_icone"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="473dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/cores" />
+
+    <ImageView
+        android:id="@+id/cores"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/cores_icone"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
 
     <EditText
         android:id="@+id/textNomePastaCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="text"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="100dp" />
+        app:layout_constraintStart_toEndOf="@+id/nome"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <EditText
         android:id="@+id/textDadoPastaCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
+        android:layout_marginTop="130dp"
         android:ems="10"
         android:hint="Dados"
         android:inputType="text"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="473dp" />
+        app:layout_constraintStart_toEndOf="@+id/dados"
+        app:layout_constraintTop_toBottomOf="@+id/textCorPastaCriar" />
 
     <EditText
         android:id="@+id/textCorPastaCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
+        android:layout_marginTop="130dp"
         android:ems="10"
         android:hint="Cor"
         android:inputType="text"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="296dp" />
+        app:layout_constraintStart_toEndOf="@+id/cores"
+        app:layout_constraintTop_toBottomOf="@+id/textNomePastaCriar" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+
+    <Button
+        android:id="@+id/btnConfirmarCadastrarPasta"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Confirmar"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" />
+
+    <Button
+        android:id="@+id/btnCancelarCadastrarPasta"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Cancelar"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#009688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".appLite.conteudo.navBar.NavBarFragment">
 
         <ImageButton
-            android:id="@+id/btnMenuDadoCriar"
+            android:id="@+id/btnMenuCadastroPasta"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -85,7 +126,7 @@
             android:src="@drawable/barras_menu" />
 
         <Button
-            android:id="@+id/btnLogoDadoCriar"
+            android:id="@+id/btnLogoCadastroPasta"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -97,7 +138,7 @@
             android:textColor="#000000" />
 
         <ImageButton
-            android:id="@+id/btnUsuarioDadoCriar"
+            android:id="@+id/btnUsuarioCadastroPasta"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -105,35 +146,7 @@
             android:contentDescription="Usuário"
             android:scaleType="fitCenter"
             android:src="@drawable/user_menu" />
+
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.50121653" />
-
-    <Button
-        android:id="@+id/btnConfirmarCadastrarDado"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirmar"
-        app:icon="@android:drawable/ic_menu_save"
-        app:iconTint="#000000"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="651dp" />
-
-    <Button
-        android:id="@+id/btnCancelarCadastrarDado"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancelar"
-        app:icon="@android:drawable/ic_menu_close_clear_cancel"
-        app:iconTint="#000000"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="651dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

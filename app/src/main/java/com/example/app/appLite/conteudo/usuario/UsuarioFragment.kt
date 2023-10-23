@@ -31,6 +31,14 @@ class UsuarioFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.btnSalvar.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        binding.btnCancelar.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         return binding.root
     }
 

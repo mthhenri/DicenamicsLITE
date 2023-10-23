@@ -18,18 +18,15 @@ class MenuFragment : Fragment() {
         val binding = FragmentMenuBinding.inflate(layoutInflater)
 
         binding.btnLogoMenu.setOnClickListener{
-            val action = MenuFragmentDirections.MenuToInicial()
-            findNavController().navigate(action)
+            findNavController().navigate(MenuFragmentDirections.MenuToInicial())
         }
 
         binding.btnMenuMenu.setOnClickListener {
-            val action = MenuFragmentDirections.ToMenu()
-            findNavController().navigate(action)
+            findNavController().navigate(MenuFragmentDirections.ToMenu())
         }
 
         binding.btnUsuarioMenu.setOnClickListener {
-            val action = MenuFragmentDirections.MenuToUsuario()
-            findNavController().navigate(action)
+            findNavController().navigate(MenuFragmentDirections.MenuToUsuario())
         }
 
         binding.btnDadosMenu.setOnClickListener {
@@ -38,6 +35,10 @@ class MenuFragment : Fragment() {
 
         binding.btnRollRapidaMenu.setOnClickListener {
             findNavController().navigate(MenuFragmentDirections.MenuToRolagemRapida())
+        }
+
+        binding.btnPastasMenu.setOnClickListener {
+            findNavController().navigate(MenuFragmentDirections.MenuToPastas())
         }
 
         return binding.root

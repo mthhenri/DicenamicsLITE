@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appLite.conteudo.pastas.AcessoPastasFragment" >
+    tools:context=".appLite.conteudo.pastas.AcessoPastasFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/btnCriarDadoPasta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -23,37 +23,85 @@
         android:id="@+id/fragmentContainerView2"
         android:name="com.example.app.appLite.conteudo.dados.DadosFragment"
         android:layout_width="380dp"
-        android:layout_height="450dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPastaDados" />
 
     <TextView
         android:id="@+id/txtPastaDados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="158dp"
-        android:text="Dados"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVoltarPastas" />
-
-    <Button
-        android:id="@+id/btnVoltarPastas"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="380dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Nome Da Pasta"
+        android:text="D a d o s"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:icon="@drawable/pasta_icon"
-        app:iconGravity="textStart"
-        app:iconPadding="5dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNomePasta" />
+
+    <TextView
+        android:id="@+id/textNomePasta"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="#00BCD4"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:text="Nome da Pasta"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#009688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".appLite.conteudo.navBar.NavBarFragment">
+
+        <ImageButton
+            android:id="@+id/btnMenuAcessoPastas"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="Menu"
+            android:scaleType="fitCenter"
+            android:src="@drawable/barras_menu" />
+
+        <Button
+            android:id="@+id/btnLogoAcessoPastas"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_weight="1"
+            android:text="Dicenamics LITE"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <ImageButton
+            android:id="@+id/btnUsuarioAcessoPastas"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="Usuário"
+            android:scaleType="fitCenter"
+            android:src="@drawable/user_menu" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

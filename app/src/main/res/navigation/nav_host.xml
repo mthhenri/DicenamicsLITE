@@ -94,6 +94,9 @@
         <action
             android:id="@+id/MenuToRolagemRapida"
             app:destination="@id/rolagemRapidaFragment" />
+        <action
+            android:id="@+id/MenuToPastas"
+            app:destination="@id/pastasFragment" />
     </fragment>
     <fragment
         android:id="@+id/dadosFragment"
@@ -145,5 +148,60 @@
         <action
             android:id="@+id/RolagemToInicial"
             app:destination="@id/inicialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pastasFragment"
+        android:name="com.example.app.appLite.conteudo.pastas.PastasFragment"
+        android:label="PastasFragment" >
+        <action
+            android:id="@+id/PastasToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/PastasToUsuario"
+            app:destination="@id/usuarioFragment" />
+        <action
+            android:id="@+id/PastasToInicial"
+            app:destination="@id/inicialFragment" />
+        <action
+            android:id="@+id/PastasToCadastroPasta"
+            app:destination="@id/pastasCadastroFragment" />
+        <action
+            android:id="@+id/PastasToAcessoPastas"
+            app:destination="@id/PastasToAcessoPasta" />
+    </fragment>
+    <fragment
+        android:id="@+id/pastasCadastroFragment"
+        android:name="com.example.app.appLite.conteudo.pastas.PastasCadastroFragment"
+        android:label="PastasCadastroFragment" >
+        <action
+            android:id="@+id/PastaCadastroToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/PastaCadastroToInicial"
+            app:destination="@id/inicialFragment" />
+        <action
+            android:id="@+id/PastaCadastroToUsuario"
+            app:destination="@id/usuarioFragment" />
+        <action
+            android:id="@+id/PastaCadastroToPastas"
+            app:destination="@id/pastasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PastasToAcessoPasta"
+        android:name="com.example.app.appLite.conteudo.pastas.AcessoPastasFragment"
+        android:label="fragment_acesso_pastas"
+        tools:layout="@layout/fragment_acesso_pastas" >
+        <action
+            android:id="@+id/AcessoPastaToAddDadoPasta"
+            app:destination="@id/dadoCadastroFragment" />
+        <action
+            android:id="@+id/AcessoPastaToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/AcessoPastaToInicial"
+            app:destination="@id/inicialFragment" />
+        <action
+            android:id="@+id/AcessoPastaToUsuario"
+            app:destination="@id/usuarioFragment" />
     </fragment>
 </navigation>

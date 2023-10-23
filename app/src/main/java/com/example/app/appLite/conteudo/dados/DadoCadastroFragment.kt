@@ -18,11 +18,11 @@ class DadoCadastroFragment : Fragment() {
         val binding = FragmentDadoCadastroBinding.inflate(layoutInflater)
 
         binding.btnConfirmarCadastrarDado.setOnClickListener {
-            findNavController().navigate(DadoCadastroFragmentDirections.DadoCriarToDados())
+            findNavController().popBackStack()
         }
 
         binding.btnCancelarCadastrarDado.setOnClickListener {
-            findNavController().navigate(DadoCadastroFragmentDirections.DadoCriarToDados())
+            findNavController().popBackStack()
         }
 
         binding.btnLogoDadoCriar.setOnClickListener {
