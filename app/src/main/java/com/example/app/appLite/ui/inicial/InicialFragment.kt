@@ -1,4 +1,4 @@
-package com.example.app.appLite.conteudo.inicial
+package com.example.app.appLite.ui.inicial
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

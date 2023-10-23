@@ -1,4 +1,4 @@
-package com.example.app.appLite.conteudo.usuario
+package com.example.app.appLite.ui.usuario
 
 import androidx.lifecycle.ViewModel
 

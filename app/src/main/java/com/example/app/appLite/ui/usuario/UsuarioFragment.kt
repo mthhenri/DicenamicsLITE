@@ -1,4 +1,4 @@
-package com.example.app.appLite.conteudo.usuario
+package com.example.app.appLite.ui.usuario
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.app.appLite.conteudo.inicial.InicialFragmentDirections
 import com.example.app.databinding.FragmentUsuarioBinding
 
 class UsuarioFragment : Fragment() {

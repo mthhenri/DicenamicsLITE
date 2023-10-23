@@ -1,4 +1,4 @@
-package com.example.app.appLite.conteudo.speedDados
+package com.example.app.appLite.ui.speedDados
 
 import androidx.lifecycle.ViewModel
 

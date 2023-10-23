@@ -28,7 +28,7 @@
         tools:layout="@layout/fragment_cadastro" />
     <fragment
         android:id="@+id/inicialFragment"
-        android:name="com.example.app.appLite.conteudo.inicial.InicialFragment"
+        android:name="com.example.app.appLite.ui.inicial.InicialFragment"
         android:label="fragment_inicial"
         tools:layout="@layout/fragment_inicial" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/usuarioFragment"
-        android:name="com.example.app.appLite.conteudo.usuario.UsuarioFragment"
+        android:name="com.example.app.appLite.ui.usuario.UsuarioFragment"
         android:label="fragment_usuario"
         tools:layout="@layout/fragment_usuario" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.app.appLite.conteudo.menu.MenuFragment"
+        android:name="com.example.app.appLite.ui.menu.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/dadosFragment"
-        android:name="com.example.app.appLite.conteudo.dados.DadosFragment"
+        android:name="com.example.app.appLite.ui.dados.DadosFragment"
         android:label="fragment_dados"
         tools:layout="@layout/fragment_dados" >
         <action
@@ -118,7 +118,7 @@
     </fragment>
     <fragment
         android:id="@+id/dadoCadastroFragment"
-        android:name="com.example.app.appLite.conteudo.dados.DadoCadastroFragment"
+        android:name="com.example.app.appLite.ui.dados.DadoCadastroFragment"
         android:label="fragment_dado_cadastro"
         tools:layout="@layout/fragment_dado_cadastro" >
         <action
@@ -136,7 +136,7 @@
     </fragment>
     <fragment
         android:id="@+id/rolagemRapidaFragment"
-        android:name="com.example.app.appLite.conteudo.speedDados.RolagemRapidaFragment"
+        android:name="com.example.app.appLite.ui.speedDados.RolagemRapidaFragment"
         android:label="fragment_rolagem_rapida"
         tools:layout="@layout/fragment_rolagem_rapida" >
         <action
@@ -151,7 +151,7 @@
     </fragment>
     <fragment
         android:id="@+id/pastasFragment"
-        android:name="com.example.app.appLite.conteudo.pastas.PastasFragment"
+        android:name="com.example.app.appLite.ui.pastas.PastasFragment"
         android:label="PastasFragment" >
         <action
             android:id="@+id/PastasToMenu"
@@ -171,7 +171,7 @@
     </fragment>
     <fragment
         android:id="@+id/pastasCadastroFragment"
-        android:name="com.example.app.appLite.conteudo.pastas.PastasCadastroFragment"
+        android:name="com.example.app.appLite.ui.pastas.PastasCadastroFragment"
         android:label="PastasCadastroFragment" >
         <action
             android:id="@+id/PastaCadastroToMenu"
@@ -188,7 +188,7 @@
     </fragment>
     <fragment
         android:id="@+id/PastasToAcessoPasta"
-        android:name="com.example.app.appLite.conteudo.pastas.AcessoPastasFragment"
+        android:name="com.example.app.appLite.ui.pastas.AcessoPastasFragment"
         android:label="fragment_acesso_pastas"
         tools:layout="@layout/fragment_acesso_pastas" >
         <action

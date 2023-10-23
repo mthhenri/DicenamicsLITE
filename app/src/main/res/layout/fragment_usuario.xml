@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appLite.conteudo.usuario.UsuarioFragment">
+    tools:context=".appLite.ui.usuario.UsuarioFragment">
 
     <ImageView
         android:id="@+id/img"

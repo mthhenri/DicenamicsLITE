@@ -1,4 +1,4 @@
-package com.example.app.appLite.conteudo.pastas
+package com.example.app.appLite.ui.pastas
 
 import androidx.lifecycle.ViewModel
 

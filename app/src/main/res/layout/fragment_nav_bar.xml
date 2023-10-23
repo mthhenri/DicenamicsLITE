@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#009688"
-    tools:context=".appLite.conteudo.navBar.NavBarFragment">
+    tools:context=".appLite.ui.navBar.NavBarFragment">
 
     <ImageButton
         android:id="@+id/btnMenu"

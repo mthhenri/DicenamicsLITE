@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appLite.conteudo.dados.DadoCadastroFragment">
+    tools:context=".appLite.ui.dados.DadoCadastroFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -127,7 +127,7 @@
         android:background="#009688"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".appLite.conteudo.navBar.NavBarFragment">
+        tools:context=".appLite.ui.navBar.NavBarFragment">
 
         <ImageButton
             android:id="@+id/btnMenuDadoCriar"

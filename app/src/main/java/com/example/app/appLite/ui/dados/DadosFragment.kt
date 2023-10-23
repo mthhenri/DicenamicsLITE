@@ -1,4 +1,4 @@
-package com.example.app.appLite.conteudo.dados
+package com.example.app.appLite.ui.dados
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

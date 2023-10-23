@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appLite.conteudo.menu.MenuFragment">
+    tools:context=".appLite.ui.menu.MenuFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".appLite.conteudo.navBar.NavBarFragment">
+        tools:context=".appLite.ui.navBar.NavBarFragment">
 
         <ImageButton
             android:id="@+id/btnMenuMenu"
