@@ -198,20 +198,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnD10" />
 
+    <ImageView
+        android:id="@+id/dadoResultado"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/dado_icone"
+        app:layout_constraintBottom_toBottomOf="@+id/textFundo"
+        app:layout_constraintEnd_toEndOf="@+id/textFundo"
+        app:layout_constraintStart_toStartOf="@+id/textFundo"
+        app:layout_constraintTop_toTopOf="@+id/textFundo" />
+
     <TextView
-        android:id="@+id/textSoma"
-        android:layout_width="50dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="34dp"
-        android:background="#D2FFD4"
-        android:gravity="center"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="12sp"
+        android:id="@+id/textResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="96sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnD12"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/dadoResultado"
+        app:layout_constraintEnd_toEndOf="@+id/dadoResultado"
+        app:layout_constraintStart_toStartOf="@+id/dadoResultado"
+        app:layout_constraintTop_toTopOf="@+id/dadoResultado" />
+
+    <TextView
+        android:id="@+id/textDadoRolado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="146dp"
+        android:text="Dado"
+        android:textAlignment="center"
+        android:textColor="#009688"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textFundo"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/textFundo"
+        app:layout_constraintTop_toTopOf="@+id/textFundo" />
 
     <LinearLayout
         android:id="@+id/linearLayout6"

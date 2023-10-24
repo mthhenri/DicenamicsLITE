@@ -7,8 +7,7 @@ import com.example.app.data.models.DadoSpeed
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class DadoSpeedRepository @Inject
-constructor(val dadoSpeedDao: DadoSpeedDao) {
+class DadoSpeedRepository @Inject constructor(val dadoSpeedDao: DadoSpeedDao) {
 
     val dadosSpeed: Flow<List<DadoSpeed>> get() = dadoSpeedDao.listar()
 

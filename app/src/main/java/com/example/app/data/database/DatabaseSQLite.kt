@@ -6,6 +6,7 @@ import androidx.room.RoomDatabase
 import com.example.app.data.dao.DadoDao
 import com.example.app.data.dao.DadoSpeedDao
 import com.example.app.data.dao.PastaDao
+import com.example.app.data.dao.ResultadosDao
 import com.example.app.data.dao.UsuarioDao
 
 abstract class BancoSQLite : RoomDatabase(){
@@ -13,6 +14,7 @@ abstract class BancoSQLite : RoomDatabase(){
         abstract fun UsuarioDao() : UsuarioDao
         abstract fun PastaDao() : PastaDao
         abstract fun DadoSpeedDao() : DadoSpeedDao
+        abstract fun ResultadosDao() : ResultadosDao
         companion object {
             @Volatile
             private var BANCO: BancoSQLite? = null
