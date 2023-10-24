@@ -19,9 +19,6 @@ interface UsuarioDao {
     @Query("SELECT * FROM usuarios WHERE username = (:username)")
     suspend fun buscarByUsername(username : String)
 
-    @Query("SELECT * FROM usuarios WHERE apelido = (:apelido)")
-    suspend fun buscarByApelido(apelido : String)
-
     @Insert
     suspend fun adicionar(usuario: Usuario)
 
