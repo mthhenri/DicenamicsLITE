@@ -32,23 +32,10 @@ data class Dado (
                     "*" -> rolagem *= valor
                     "/" -> rolagem /= valor
                 }
-            } else {
-                rolagem -= 1000
             }
+
             resultados.add(rolagem);
         }
-//        if(mod != null){
-//            val (operador, valor) = mod
-//
-//            for(i in resultados.indices){
-//                when(operador){
-//                    "+" -> resultados[i] += valor
-//                    "-" -> resultados[i] -= valor
-//                    "*" -> resultados[i] *= valor
-//                    "/" -> resultados[i] /= valor
-//                }
-//            }
-//        }
 
         return resultados
     }
