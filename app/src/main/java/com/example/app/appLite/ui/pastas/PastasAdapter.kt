@@ -10,8 +10,10 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.appLite.ui.dados.DadosFragmentDirections
 import com.example.app.data.models.Pasta
+import com.example.app.databinding.FragmentAcessoPastasBinding
 import com.example.app.databinding.FragmentDadoRecyclerBinding
 import com.example.app.databinding.FragmentPastaRecyclerBinding
+import com.example.app.databinding.FragmentPastasBinding
 
 class PastasAdapter (
         private var pastas : List<Pasta>,
@@ -20,7 +22,6 @@ class PastasAdapter (
     RecyclerView.Adapter<PastasAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
         return ViewHolder(
             FragmentPastaRecyclerBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -54,7 +55,8 @@ class PastasAdapter (
             view.findNavController().navigate(action)
         }
 
-        holder.abrirPasta.setOnClickListener { view->
+        holder.abrirPasta.setOnClickListener {view ->
+            viewModel.editar(pasta)
             view.findNavController().navigate(PastasFragmentDirections.PastasToAcessoPastas())
         }
 
