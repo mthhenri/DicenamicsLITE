@@ -12,16 +12,19 @@ class PastasAdapter (
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PastasAdapter.ViewHolder {
+
         TODO("Not yet implemented")
     }
 
 
     override fun onBindViewHolder(holder: PastasAdapter.ViewHolder, position: Int) {
+
         TODO("Not yet implemented")
     }
 
 
     override fun getItemCount(): Int {
+
         TODO("Not yet implemented")
     }
 
