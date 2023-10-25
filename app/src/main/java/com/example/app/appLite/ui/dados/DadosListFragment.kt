@@ -16,17 +16,17 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class DadosListFragment : Fragment() {
-    fun onCreatedView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) : View? {
+    ): View? {
+        val viewModel: DadosViewModel by activityViewModels()
         val binding = FragmentDadosListBinding.inflate(layoutInflater)
-        val viewModel : DadosViewModel by activityViewModels()
         val recyclerView = binding.root
 
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED){
-                viewModel.dados.collect{dados ->
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.dados.collect { dados ->
                     recyclerView.layoutManager = LinearLayoutManager(context)
                     recyclerView.adapter = DadosAdapter(dados, viewModel)
                 }

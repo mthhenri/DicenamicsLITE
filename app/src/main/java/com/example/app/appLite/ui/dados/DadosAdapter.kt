@@ -1,5 +1,6 @@
 package com.example.app.appLite.ui.dados
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageButton
@@ -30,7 +31,24 @@ class DadosAdapter(
         val dado = dados[position]
         val iconeIcon = Icons.get(dado.icon)
         holder.iconRolarDado.setImageDrawable(iconeIcon.toDrawable())
+
+
+        holder.itemView.setOnLongClickListener { view ->
+            AlertDialog.Builder(view.context)
+                .setMessage("ATENÇÃO: realmente deseja excluir?")
+                .setPositiveButton("Confirmar") { dialog, id ->
+                    viewModel.excluirPorId(dado)
+                }
+                .setNegativeButton("Cancelar") { dialog, i ->
+
+                }
+                .create()
+                .show()
+            true
+        }
     }
+
+
 
     override fun getItemCount(): Int = dados.size
 

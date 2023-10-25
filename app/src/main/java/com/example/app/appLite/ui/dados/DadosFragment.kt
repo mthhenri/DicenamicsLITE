@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.app.data.database.BancoSQLite
 import com.example.app.databinding.FragmentDadosBinding
 import com.example.app.databinding.FragmentDadosListBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,8 +27,9 @@ class DadosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentDadosBinding.inflate(layoutInflater)
-        val viewModel : DadosViewModel by activityViewModels()
+        val viewModel: DadosViewModel by activityViewModels()
         val recyclerView = binding.root
+
 
         binding.btnLogoDados.setOnClickListener {
             findNavController().navigate(DadosFragmentDirections.DadosToInicial())
