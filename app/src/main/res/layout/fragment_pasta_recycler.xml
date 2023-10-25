@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btnAcessarPasta"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:icon="@drawable/pasta_icon"
+        app:iconGravity="textEnd"
+        app:iconTint="@color/black"
+        app:rippleColor="#000000" />
+
+    <TextView
+        android:id="@+id/txtNomePasta"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nome da pasta"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnEditarPasta"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:icon="@drawable/editar_icon"
+        app:iconTint="#000000" />
+
+    <Button
+        android:id="@+id/btnExcluirPasta"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:icon="@drawable/deletar_icon"
+        app:iconTint="#000000" />
+</LinearLayout>
