@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.app.databinding.FragmentPastasBinding
 
-class PastasFragment : Fragment() {
+class PastasFragment  : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
