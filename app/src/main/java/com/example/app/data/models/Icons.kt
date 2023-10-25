@@ -18,7 +18,14 @@ class Icons {
                 "dados icone 10" to R.drawable.dados_icon,
                 "dados icone 11" to R.drawable.dados_pilha,
                 "dados icone 12" to R.drawable.tres_dados,
-                "dados icone 13" to R.drawable.numeros_icone
+                "dados icone 13" to R.drawable.numeros_icone,
+                "dados icone 14" to R.drawable.d100_speed_icon,
+                "dados icone 15" to R.drawable.d20_speed_icon,
+                "dados icone 16" to R.drawable.d12_speed_icon,
+                "dados icone 17" to R.drawable.d10_speed_icon,
+                "dados icone 18" to R.drawable.d8_speed_icon,
+                "dados icone 19" to R.drawable.d6_speed_icon,
+                "dados icone 20" to R.drawable.d4_speed_icon
             )
             return mapOfIcons[key] ?: R.drawable.dados_icon
         }

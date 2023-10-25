@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.app.data.models.Dado
 import com.example.app.data.models.DadoSpeed
+import com.example.app.data.models.Icons
 import com.example.app.databinding.FragmentRolagemRapidaBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,54 +49,63 @@ class RolagemRapidaFragment : Fragment() {
             val resultado = D2.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D2"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 19"))
         }
 
         binding.btnD3.setOnClickListener {
             val resultado = D3.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D3"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 19"))
         }
 
         binding.btnD4.setOnClickListener {
             val resultado = D4.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D4"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 20"))
         }
 
         binding.btnD6.setOnClickListener {
             val resultado = D6.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D6"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 19"))
         }
 
         binding.btnD8.setOnClickListener {
             val resultado = D8.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D8"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 18"))
         }
 
         binding.btnD10.setOnClickListener {
             val resultado = D10.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D10"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 17"))
         }
 
         binding.btnD12.setOnClickListener {
             val resultado = D12.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D12"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 16"))
         }
 
         binding.btnD20.setOnClickListener {
             val resultado = D20.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D20"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 15"))
         }
 
         binding.btnD100.setOnClickListener {
             val resultado = D100.rolarDado()
             binding.textResultado.text = resultado.toString()
             binding.textDadoRolado.text = "D100"
+            binding.dadoResultado.setImageResource(Icons.Companion.get("dados icone 14"))
         }
 
 
