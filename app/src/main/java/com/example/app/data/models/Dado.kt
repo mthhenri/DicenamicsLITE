@@ -20,36 +20,50 @@ data class Dado (
 
     fun rolarDado() : List<Int> {
         val resultados = mutableListOf<Int>()
+        val mod = splitString(this.modificador)
 
         repeat(this.quantidade){
-            val rolagem = Random.nextInt(1, this.faces + 1)
+            var rolagem = Random.nextInt(1, this.faces + 1)
+            if(mod != null){
+                val (operador, valor) = mod
+                when(operador){
+                    "+" -> rolagem += valor
+                    "-" -> rolagem -= valor
+                    "*" -> rolagem *= valor
+                    "/" -> rolagem /= valor
+                }
+            } else {
+                rolagem -= 1000
+            }
             resultados.add(rolagem);
         }
-        val mod = splitString(this.modificador)
-        if(modificador != "" && mod != null){
-            val (operador, valor) = mod
-
-            for(i in resultados.indices){
-                when(operador){
-                    "+" -> resultados[i] + valor
-                    "-" -> resultados[i] - valor
-                    "*" -> resultados[i] * valor
-                    "/" -> resultados[i] / valor
-                }
-            }
-
-        }
+//        if(mod != null){
+//            val (operador, valor) = mod
+//
+//            for(i in resultados.indices){
+//                when(operador){
+//                    "+" -> resultados[i] += valor
+//                    "-" -> resultados[i] -= valor
+//                    "*" -> resultados[i] *= valor
+//                    "/" -> resultados[i] /= valor
+//                }
+//            }
+//        }
 
         return resultados
     }
 
     fun splitString(input: String): Pair<String, Int>? {
-        val partes = input.trim().split(" ")
+        val operadores = listOf("+", "-", "*", "/")
+        val partes = operadores.find { input.contains(it) }
 
-        if (partes.size == 2) {
-            val operador = partes[0]
-            val numero = partes[1].toIntOrNull() ?: 0
-            return operador to numero
+        if (partes != null) {
+            val operador = partes
+            val numero = input.substringAfter(partes).trim().toIntOrNull()
+
+            if (numero != null) {
+                return operador to numero
+            }
         }
 
         return null

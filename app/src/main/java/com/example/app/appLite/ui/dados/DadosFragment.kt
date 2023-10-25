@@ -28,7 +28,16 @@ class DadosFragment : Fragment() {
     ): View? {
         val binding = FragmentDadosBinding.inflate(layoutInflater)
         val viewModel: DadosViewModel by activityViewModels()
-        val recyclerView = binding.root
+        val recyclerView = binding.recycleViewDados
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.dados.collect { dados ->
+                    recyclerView.layoutManager = LinearLayoutManager(context)
+                    recyclerView.adapter = DadosAdapter(dados, viewModel)
+                }
+            }
+        }
 
 
         binding.btnLogoDados.setOnClickListener {
