@@ -5,13 +5,12 @@ import com.example.app.data.models.Usuario
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class UsuarioRepository @Inject
-constructor(val usuarioDao: UsuarioDao) {
+class UsuarioRepository @Inject constructor(val usuarioDao: UsuarioDao) {
 
     val usuarios: Flow<List<Usuario>> get() = usuarioDao.listar()
 
     suspend fun salvar(usuario: Usuario) {
-        if (usuario.id == 0) {
+        if (usuario.userId == 0) {
             usuarioDao.adicionar(usuario)
         } else {
             usuarioDao.atualizar(usuario)

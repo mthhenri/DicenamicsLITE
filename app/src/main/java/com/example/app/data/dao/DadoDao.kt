@@ -13,11 +13,11 @@ interface DadoDao {
     @Query("SELECT * FROM dados")
     fun listar() : Flow<List<Dado>>
 
-    @Query("SELECT * FROM dados WHERE id = (:id)")
-    suspend fun buscarById(id : Int)
+    @Query("SELECT * FROM dados WHERE dadoId = (:dadoId)")
+    suspend fun buscarById(dadoId : Int) : Dado
 
     @Query("SELECT * FROM dados WHERE nome = (:nome)")
-    suspend fun buscarByNome(nome : String)
+    suspend fun buscarByNome(nome : String) : Dado
 
     @Insert
     suspend fun adicionar(dado: Dado)
@@ -25,8 +25,8 @@ interface DadoDao {
     @Update
     suspend fun atualizar(dado: Dado)
 
-    @Query("DELETE FROM dados WHERE id = (:id)")
-    suspend fun deletarById(id : Int)
+    @Query("DELETE FROM dados WHERE dadoId = (:dadoId)")
+    suspend fun deletarById(dadoId : Int)
 
     @Query("DELETE FROM dados WHERE nome = (:nome)")
     suspend fun deletarByNome(nome: String)

@@ -10,7 +10,7 @@ class ResultadosRepository @Inject constructor(val resultadosDao: ResultadosDao)
     val resultados : Flow<List<Resultados>> get() = resultadosDao.listar()
 
     suspend fun salvar(resultados: Resultados) {
-        if (resultados.id == 0){
+        if (resultados.resultId == 0){
             resultadosDao.adicionar(resultados)
         } else {
             resultadosDao.atualizar(resultados)

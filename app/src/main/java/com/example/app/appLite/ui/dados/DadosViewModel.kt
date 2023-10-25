@@ -7,11 +7,12 @@ import com.example.app.data.repository.DadoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DadoCadastroViewModel  @Inject constructor(val repository: DadoRepository) : ViewModel() {
+class DadosViewModel @Inject constructor(val repository: DadoRepository) : ViewModel() {
 
     var dado : Dado = Dado()
 
@@ -34,7 +35,7 @@ class DadoCadastroViewModel  @Inject constructor(val repository: DadoRepository)
         this.dado = dado
     }
 
-    fun salvar(dado: Dado) = viewModelScope.launch{
+    fun salvar() = viewModelScope.launch{
         repository.salvar(dado)
     }
 
@@ -45,4 +46,5 @@ class DadoCadastroViewModel  @Inject constructor(val repository: DadoRepository)
     fun excluirPorNome(dado: Dado) = viewModelScope.launch{
         repository.excluirPorNome(dado.nome)
     }
+
 }

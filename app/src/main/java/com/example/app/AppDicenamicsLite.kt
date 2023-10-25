@@ -2,9 +2,13 @@ package com.example.app
 
 import android.app.Application
 import android.content.Context
+import com.example.app.data.dao.DadoDao
 import com.example.app.data.dao.DadoSpeedDao
+import com.example.app.data.dao.UsuarioDao
 import com.example.app.data.database.BancoSQLite
+import com.example.app.data.repository.DadoRepository
 import com.example.app.data.repository.DadoSpeedRepository
+import com.example.app.data.repository.UsuarioRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,8 +28,28 @@ class AppDicenamicsLite : Application() {
     }
 
     @Provides
+    fun providesDadoRepository(dadoDao: DadoDao) : DadoRepository {
+        return DadoRepository(dadoDao)
+    }
+
+    @Provides
+    fun providesUsuarioRepository(usuarioDao: UsuarioDao) : UsuarioRepository{
+        return UsuarioRepository(usuarioDao)
+    }
+
+    @Provides
     fun provideDadoSpeedDao(banco : BancoSQLite) : DadoSpeedDao{
         return banco.DadoSpeedDao()
+    }
+
+    @Provides
+    fun provideDadoDao(banco : BancoSQLite) : DadoDao {
+        return banco.DadoDao()
+    }
+
+    @Provides
+    fun provideUsuarioDao(banco : BancoSQLite) : UsuarioDao {
+        return  banco.UsuarioDao()
     }
 
     @Provides

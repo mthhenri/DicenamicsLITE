@@ -6,13 +6,12 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 
-class DadoRepository @Inject
-constructor(val dadoDao: DadoDao){
+class DadoRepository @Inject constructor(val dadoDao: DadoDao){
 
     val dados: Flow<List<Dado>> get() = dadoDao.listar()
 
     suspend fun salvar(dado: Dado) {
-        if (dado.id == 0){
+        if (dado.dadoId == 0){
             dadoDao.adicionar(dado)
         } else {
             dadoDao.atualizar(dado)

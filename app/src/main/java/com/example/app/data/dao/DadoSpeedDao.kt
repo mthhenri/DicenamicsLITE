@@ -14,7 +14,7 @@ interface DadoSpeedDao {
     fun listar() : Flow<List<DadoSpeed>>
 
     @Query("SELECT * FROM dadosSpeed WHERE faces = (:faces)")
-    suspend fun buscar(faces : Int)
+    suspend fun buscar(faces : Int) : DadoSpeed
 
     @Insert
     suspend fun adicionar(dadoSpeed: DadoSpeed)

@@ -7,14 +7,16 @@ import kotlin.random.Random
 @Entity(tableName = "dados")
 data class Dado (
     @PrimaryKey(autoGenerate = true)
-    var id : Int = 0,
+    var dadoId : Int = 0,
     var icon : String = "",
     var nome : String = "",
     var faces : Int = 0,
     var quantidade : Int = 0,
-    var modificador : String = ""
+    var modificador : String = "",
+    var pastaId : Int = 0,
+    var usuarioDadosId : Long = 0
 ){
-    constructor() : this(0,"dados_icon.png","",2,1,"")
+    constructor() : this(0,"","",2,1,"")
 
     fun rolarDado() : List<Int> {
         val resultados = mutableListOf<Int>()

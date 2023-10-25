@@ -10,4 +10,4 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".appLite.ui.dados.DadosListFragment"
-    tools:listitem="@layout/fragment_dado" />
+    tools:listitem="@layout/fragment_dado_recycler" />

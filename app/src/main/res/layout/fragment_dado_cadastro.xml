@@ -17,84 +17,80 @@
         android:id="@+id/nome"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="48dp"
         android:src="@drawable/dado_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        app:layout_constraintBottom_toTopOf="@+id/cor"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <ImageView
         android:id="@+id/cor"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="48dp"
         android:src="@drawable/texto_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome" />
+        app:layout_constraintBottom_toTopOf="@+id/dados"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <ImageView
         android:id="@+id/dados"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="48dp"
         android:src="@drawable/d6_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cor" />
+        app:layout_constraintBottom_toTopOf="@+id/quantidade"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <ImageView
         android:id="@+id/quantidade"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="49dp"
         android:src="@drawable/numeros_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dados" />
+        app:layout_constraintBottom_toTopOf="@+id/modificador"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <ImageView
         android:id="@+id/modificador"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="109dp"
         android:src="@drawable/modificador_icone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantidade" />
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirmarCadastrarDado"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <EditText
-        android:id="@+id/textNomePastaCriar"
+        android:id="@+id/textIconDadoCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="48dp"
         android:ems="10"
         android:hint="Icone"
         android:inputType="text"
-        app:layout_constraintStart_toEndOf="@+id/nome"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        app:layout_constraintBottom_toTopOf="@+id/textNomeDadoCriar"
+        app:layout_constraintStart_toEndOf="@+id/nome" />
 
     <EditText
-        android:id="@+id/textDadoPastaCriar"
+        android:id="@+id/textNomeDadoCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="48dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/textCorPastaCriar"
-        app:layout_constraintStart_toEndOf="@+id/cor"
-        app:layout_constraintTop_toBottomOf="@+id/textNomePastaCriar" />
+        app:layout_constraintBottom_toTopOf="@+id/textFacesDadoCriar"
+        app:layout_constraintStart_toEndOf="@+id/cor" />
 
     <EditText
-        android:id="@+id/textCorPastaCriar"
+        android:id="@+id/textFacesDadoCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="49dp"
         android:ems="10"
         android:hint="Faces"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textQuantidadeDadoCriar"
         app:layout_constraintStart_toEndOf="@+id/dados" />
 
@@ -102,10 +98,11 @@
         android:id="@+id/textQuantidadeDadoCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="46dp"
         android:ems="10"
         android:hint="Quantidade"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textModificadorDadoCriar"
         app:layout_constraintStart_toEndOf="@+id/quantidade" />
 
@@ -113,12 +110,46 @@
         android:id="@+id/textModificadorDadoCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="190dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="110dp"
         android:ems="10"
         android:hint="Modificador"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirmarCadastrarDado"
         app:layout_constraintStart_toEndOf="@+id/modificador" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+
+    <Button
+        android:id="@+id/btnConfirmarCadastrarDado"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Confirmar"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" />
+
+    <Button
+        android:id="@+id/btnCancelarCadastrarDado"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Cancelar"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -161,38 +192,5 @@
             android:scaleType="fitCenter"
             android:src="@drawable/user_menu" />
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.50121653" />
-
-    <Button
-        android:id="@+id/btnConfirmarCadastrarDado"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:text="Confirmar"
-        app:icon="@android:drawable/ic_menu_save"
-        app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4" />
-
-    <Button
-        android:id="@+id/btnCancelarCadastrarDado"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
-        android:text="Cancelar"
-        app:icon="@android:drawable/ic_menu_close_clear_cancel"
-        app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

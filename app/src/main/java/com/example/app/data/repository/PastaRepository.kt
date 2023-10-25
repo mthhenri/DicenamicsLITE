@@ -11,7 +11,7 @@ constructor(val pastaDao: PastaDao) {
     val pastas: Flow<List<Pasta>> get() = pastaDao.listar()
 
     suspend fun salvar(pasta: Pasta) {
-        if (pasta.id == 0) {
+        if (pasta.pastaId.toInt() == 0) {
             pastaDao.adicionar(pasta)
         } else {
             pastaDao.atualizar(pasta)

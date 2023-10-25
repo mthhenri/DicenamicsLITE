@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#40009688"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content">
 
     <ImageButton
         android:id="@+id/btnRolarDado"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_weight="1"
+        android:backgroundTint="#00FFFFFF"
         android:contentDescription="Rolar dado"
         android:scaleType="centerCrop"
         android:src="@drawable/dados_icon" />
 
     <TextView
-        android:id="@+id/txtDados"
+        android:id="@+id/txtNomeDado"
         android:layout_width="302dp"
         android:layout_height="match_parent"
         android:layout_marginStart="12dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Nome do dado"
-        android:textAlignment="viewStart" />
+        android:textAlignment="viewStart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/btnEditarDado"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_weight="1"
+        android:backgroundTint="#00FFFFFF"
         android:contentDescription="Editar dado"
         android:scaleType="centerCrop"
         android:src="@drawable/editar_icon" />
@@ -40,8 +40,8 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_weight="1"
+        android:backgroundTint="#00FFFFFF"
         android:contentDescription="Deletar dado"
         android:scaleType="centerCrop"
         android:src="@drawable/deletar_icon" />
-
 </LinearLayout>
