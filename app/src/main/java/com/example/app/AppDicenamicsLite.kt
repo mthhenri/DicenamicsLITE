@@ -4,10 +4,12 @@ import android.app.Application
 import android.content.Context
 import com.example.app.data.dao.DadoDao
 import com.example.app.data.dao.DadoSpeedDao
+import com.example.app.data.dao.PastaDao
 import com.example.app.data.dao.UsuarioDao
 import com.example.app.data.database.BancoSQLite
 import com.example.app.data.repository.DadoRepository
 import com.example.app.data.repository.DadoSpeedRepository
+import com.example.app.data.repository.PastaRepository
 import com.example.app.data.repository.UsuarioRepository
 import dagger.Module
 import dagger.Provides
@@ -33,8 +35,13 @@ class AppDicenamicsLite : Application() {
     }
 
     @Provides
-    fun providesUsuarioRepository(usuarioDao: UsuarioDao) : UsuarioRepository{
+    fun providesUsuarioRepository(usuarioDao: UsuarioDao) : UsuarioRepository {
         return UsuarioRepository(usuarioDao)
+    }
+
+    @Provides
+    fun providePastaRepository(pastaDao: PastaDao) : PastaRepository {
+        return PastaRepository(pastaDao)
     }
 
     @Provides
@@ -50,6 +57,11 @@ class AppDicenamicsLite : Application() {
     @Provides
     fun provideUsuarioDao(banco : BancoSQLite) : UsuarioDao {
         return  banco.UsuarioDao()
+    }
+
+    @Provides
+    fun providePastaDao(banco : BancoSQLite) : PastaDao {
+        return banco.PastaDao()
     }
 
     @Provides

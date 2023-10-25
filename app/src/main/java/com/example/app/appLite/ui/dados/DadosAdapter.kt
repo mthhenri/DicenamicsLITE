@@ -70,23 +70,7 @@ class DadosAdapter(
                 .show()
             true
         }
-
-//        holder.itemView.setOnLongClickListener { view ->
-//            AlertDialog.Builder(view.context)
-//                .setMessage("ATENÇÃO: realmente deseja excluir?")
-//                .setPositiveButton("Confirmar") { dialog, id ->
-//                    viewModel.excluirPorId(dado)
-//                }
-//                .setNegativeButton("Cancelar") { dialog, i ->
-//
-//                }
-//                .create()
-//                .show()
-//            true
-//        }
     }
-
-
 
     override fun getItemCount(): Int = dados.size
 

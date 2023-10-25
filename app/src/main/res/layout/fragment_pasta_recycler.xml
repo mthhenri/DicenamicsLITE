@@ -5,46 +5,47 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnAcessarPasta"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/btnAbrirPasta"
+        android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:backgroundTint="#00FFFFFF"
-        android:fontFamily="sans-serif-black"
-        android:textAlignment="center"
-        android:textSize="12sp"
-        app:icon="@drawable/pasta_icon"
-        app:iconGravity="textEnd"
-        app:iconTint="@color/black"
-        app:rippleColor="#000000" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/pasta_icon"
+        android:tint="#000000" />
 
     <TextView
         android:id="@+id/txtNomePasta"
         android:layout_width="290dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:gravity="center"
+        android:paddingStart="8dp"
         android:text="Nome da pasta"
         android:textAlignment="textStart"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnEditarPasta"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:icon="@drawable/editar_icon"
-        app:iconTint="#000000" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="0"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/editar_icon"
+        android:tint="#000000" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnExcluirPasta"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:icon="@drawable/deletar_icon"
-        app:iconTint="#000000" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="0"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/deletar_icon"
+        android:tint="#000000" />
+
 </LinearLayout>
