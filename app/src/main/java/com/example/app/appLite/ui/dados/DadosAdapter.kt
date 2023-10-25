@@ -5,13 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.widget.AlertDialogLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.data.models.Dado
 import com.example.app.data.models.Icons
 import com.example.app.databinding.FragmentDadoRecyclerBinding
-import com.example.app.databinding.FragmentDadosBinding
-
 class DadosAdapter(
         private var dados : List<Dado>,
         val viewModel: DadosViewModel
@@ -50,7 +48,9 @@ class DadosAdapter(
         }
 
         holder.editarDado.setOnClickListener { view->
-
+            viewModel.editar(dado)
+            val action = DadosFragmentDirections.DadosToDadoCriar()
+            view.findNavController().navigate(action)
         }
 
         holder.iconRolarDado.setOnClickListener { view->
