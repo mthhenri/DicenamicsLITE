@@ -12,7 +12,7 @@ import javax.inject.Inject
 @HiltViewModel
 class PastasViewModel  @Inject constructor(val repository: PastaRepository) : ViewModel() {
     var pasta : Pasta = Pasta()
-    var ultimaPasta : Pasta = Pasta()
+    var ultimaPasta : Pasta? = Pasta()
 
     private var _pastas = MutableStateFlow(listOf<Pasta>())
     val pastas : Flow<List<Pasta>> = _pastas

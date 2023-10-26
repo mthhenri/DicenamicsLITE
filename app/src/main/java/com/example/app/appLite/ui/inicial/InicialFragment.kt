@@ -12,6 +12,7 @@ import com.example.app.appLite.ui.pastas.PastasViewModel
 import com.example.app.data.models.Dado
 import com.example.app.databinding.FragmentInicialBinding
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.collect
 
 class InicialFragment : Fragment() {
     override fun onCreateView(
@@ -22,11 +23,14 @@ class InicialFragment : Fragment() {
         val viewModelDado : DadosViewModel by activityViewModels()
         val viewModelPasta : PastasViewModel by activityViewModels()
 
-        viewModelDado.buscarUltimo()
-        viewModelPasta.buscarultimo()
-        binding.textDado.setText("Último dado criado: \n\n${viewModelDado.ultimoDado.nome}")
-        binding.textPasta.setText("Última pasta criada: \n\n${viewModelPasta.ultimaPasta.nome}")
-        binding.textRolagem.setText("Última rolagem: \n\nNÃO FINALIZADO")
+        if(viewModelDado.dados.toString() != "" && viewModelPasta.pastas.toString() != ""
+            && viewModelDado.ultimoDado != null && viewModelPasta.ultimaPasta != null){
+            viewModelDado.buscarUltimo()
+            viewModelPasta.buscarultimo()
+            binding.textDado.setText("Último dado criado: \n\n${viewModelDado.ultimoDado!!.nome}")
+            binding.textPasta.setText("Última pasta criada: \n\n${viewModelPasta.ultimaPasta!!.nome}")
+            binding.textRolagem.setText("Última rolagem: \n\nNÃO FINALIZADO")
+        }
 
         binding.btnLogoInicial.setOnClickListener{
             val action = InicialFragmentDirections.ToInicial()

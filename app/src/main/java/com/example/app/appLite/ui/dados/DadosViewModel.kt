@@ -18,7 +18,7 @@ import javax.inject.Inject
 class DadosViewModel @Inject constructor(val repository: DadoRepository) : ViewModel() {
 
     var dado : Dado = Dado()
-    var ultimoDado : Dado = Dado()
+    var ultimoDado : Dado? = Dado()
 
     private var _dados = MutableStateFlow(listOf<Dado>())
     val dados : Flow<List<Dado>> = _dados
