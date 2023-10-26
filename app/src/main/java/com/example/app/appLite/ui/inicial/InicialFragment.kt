@@ -23,6 +23,10 @@ class InicialFragment : Fragment() {
         val viewModelDado : DadosViewModel by activityViewModels()
         val viewModelPasta : PastasViewModel by activityViewModels()
 
+        binding.textDado.setText("Último dado criado: \n\n")
+        binding.textPasta.setText("Última pasta criada: \n\n")
+        binding.textRolagem.setText("Última rolagem: \n\nNÃO FINALIZADO")
+
         if(viewModelDado.dados.toString() != "" && viewModelPasta.pastas.toString() != ""
             && viewModelDado.ultimoDado != null && viewModelPasta.ultimaPasta != null){
             viewModelDado.buscarUltimo()
