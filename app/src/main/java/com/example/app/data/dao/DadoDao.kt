@@ -19,6 +19,9 @@ interface DadoDao {
     @Query("SELECT * FROM dados WHERE nome = (:nome)")
     suspend fun buscarByNome(nome : String) : Dado
 
+    @Query("SELECT * FROM dados ORDER BY dadoId DESC LIMIT 1")
+    suspend fun buscarUltimo() : Dado
+
     @Insert
     suspend fun adicionar(dado: Dado)
 

@@ -22,6 +22,9 @@ interface PastaDao {
     @Query("SELECT * FROM pastas WHERE nome = (:nome)")
     suspend fun buscarByNome(nome : String) : Pasta
 
+    @Query("SELECT * FROM pastas ORDER BY pastaId DESC LIMIT 1")
+    suspend fun buscarUltimo() : Pasta
+
     @Insert
     suspend fun adicionar(pasta: Pasta)
 

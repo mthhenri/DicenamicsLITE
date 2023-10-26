@@ -25,4 +25,8 @@ constructor(val pastaDao: PastaDao) {
     suspend fun excluirPorNome(pastaNome: String) {
         pastaDao.deletarByNome(pastaNome)
     }
+
+    suspend fun buscarUltimo() : Pasta {
+        return pastaDao.buscarUltimo()
+    }
 }

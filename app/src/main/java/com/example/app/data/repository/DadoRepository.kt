@@ -25,4 +25,8 @@ class DadoRepository @Inject constructor(val dadoDao: DadoDao){
     suspend fun excluirPorNome(dadoNome: String){
         dadoDao.deletarByNome(dadoNome)
     }
+
+    suspend fun buscarUltimo() : Dado {
+        return dadoDao.buscarUltimo()
+    }
 }

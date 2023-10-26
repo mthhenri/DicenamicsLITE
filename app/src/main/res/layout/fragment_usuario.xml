@@ -7,36 +7,28 @@
     tools:context=".appLite.ui.usuario.UsuarioFragment">
 
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/imgUser"
         android:layout_width="153dp"
         android:layout_height="145dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtOldUser"
+        app:layout_constraintEnd_toStartOf="@+id/btnImagemBuscar"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/sem_foto"
         tools:src="@drawable/sem_foto" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/altImg"
-        android:layout_width="56dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="52dp"
-        android:clickable="true"
-        android:scaleType="fitCenter"
-        android:src="@android:drawable/stat_sys_upload"
-        app:backgroundTint="@color/lightGreen"
-        app:layout_constraintStart_toEndOf="@+id/img"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/alterImgTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="48dp"
         android:text="Alterar Imagem"
         android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/altImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
@@ -46,7 +38,7 @@
         android:layout_marginStart="16dp"
         android:text="Username Antigo"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/verificaUser"
+        app:layout_constraintBottom_toTopOf="@+id/textUserAntigo"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -56,7 +48,7 @@
         android:layout_marginStart="16dp"
         android:text="Apelido Antigo"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/verificaApe"
+        app:layout_constraintBottom_toTopOf="@+id/textApelidoAntigo"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -66,11 +58,11 @@
         android:layout_marginStart="16dp"
         android:text="Senha Antiga"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/verficaSenha"
+        app:layout_constraintBottom_toTopOf="@+id/textSenhaAntiga"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/verficaSenha"
+        android:id="@+id/textSenhaAntiga"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
@@ -88,11 +80,11 @@
         android:layout_height="wrap_content"
         android:text="Senha Nova"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/newSenha"
+        app:layout_constraintBottom_toTopOf="@+id/textSenhaNova"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/newSenha"
+        android:id="@+id/textSenhaNova"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginBottom="111dp"
@@ -104,7 +96,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/verificaApe"
+        android:id="@+id/textApelidoAntigo"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
@@ -122,11 +114,11 @@
         android:layout_height="wrap_content"
         android:text="Apelido Novo"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/editApe"
+        app:layout_constraintBottom_toTopOf="@+id/textApelidoNovo"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/editApe"
+        android:id="@+id/textApelidoNovo"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginBottom="39dp"
@@ -143,11 +135,11 @@
         android:layout_height="wrap_content"
         android:text="Username Novo"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/editUser"
+        app:layout_constraintBottom_toTopOf="@+id/textUserNovo"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/editUser"
+        android:id="@+id/textUserNovo"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginBottom="39dp"
@@ -159,7 +151,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/verificaUser"
+        android:id="@+id/textUserAntigo"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
@@ -259,5 +251,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/btnImagemBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="83dp"
+        android:backgroundTint="@color/darkGreen"
+        android:text="Procurar Imagem"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNewUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alterImgTxt"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.app.data.models.Pasta
 import com.example.app.databinding.FragmentPastasCadastroBinding
+import com.example.app.login.CadastroViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,6 +20,7 @@ class PastasCadastroFragment : Fragment() {
     ): View? {
         val binding = FragmentPastasCadastroBinding.inflate(layoutInflater)
         val viewModel : PastasViewModel by activityViewModels()
+        val viewModelUser : CadastroViewModel by activityViewModels()
 
         val pastaNova = viewModel.pasta
 
@@ -29,7 +31,8 @@ class PastasCadastroFragment : Fragment() {
             val pastaSalvar = Pasta(
                 pastaNova.pastaId,
                 binding.textNomePastaCriar.text.toString(),
-                binding.textCorPastaCriar.text.toString()
+                binding.textCorPastaCriar.text.toString(),
+                viewModelUser.usuario.userId.toLong()
             )
 
             viewModel.pasta = pastaSalvar

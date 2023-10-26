@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.app.data.models.Dado
 import com.example.app.databinding.FragmentDadoCadastroBinding
+import com.example.app.login.CadastroViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,6 +21,7 @@ class DadoCadastroFragment : Fragment() {
 
         val binding = FragmentDadoCadastroBinding.inflate(layoutInflater)
         val viewModel : DadosViewModel by activityViewModels()
+        val viewModelUser : CadastroViewModel by activityViewModels()
 
         val dadoNovo = viewModel.dado
 
@@ -36,7 +38,9 @@ class DadoCadastroFragment : Fragment() {
                 binding.textNomeDadoCriar.text.toString(),
                 binding.textFacesDadoCriar.text.toString().toInt(),
                 binding.textQuantidadeDadoCriar.text.toString().toInt(),
-                binding.textModificadorDadoCriar.text.toString()
+                binding.textModificadorDadoCriar.text.toString(),
+                dadoNovo.pastaId.toInt(),
+                viewModelUser.usuario.userId.toLong()
             )
             viewModel.dado = dadoSalvar
             viewModel.salvar()

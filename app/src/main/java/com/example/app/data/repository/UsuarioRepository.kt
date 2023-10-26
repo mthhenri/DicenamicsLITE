@@ -24,4 +24,12 @@ class UsuarioRepository @Inject constructor(val usuarioDao: UsuarioDao) {
     suspend fun excluirPorNome(usuarioNome: String) {
         usuarioDao.deletarByUsername(usuarioNome)
     }
+
+    suspend fun  buscarPorUsername(usuarioNome : String) : Usuario? {
+        return usuarioDao.buscarByUsername(usuarioNome)
+    }
+
+    suspend fun  login(username : String, senha : String) : Usuario? {
+        return usuarioDao.login(username, senha)
+    }
 }

@@ -167,7 +167,7 @@
             app:destination="@id/pastasCadastroFragment" />
         <action
             android:id="@+id/PastasToAcessoPastas"
-            app:destination="@id/PastasToAcessoPasta" />
+            app:destination="@id/acessoPastaFragment" />
     </fragment>
     <fragment
         android:id="@+id/pastasCadastroFragment"
@@ -187,7 +187,7 @@
             app:destination="@id/pastasFragment" />
     </fragment>
     <fragment
-        android:id="@+id/PastasToAcessoPasta"
+        android:id="@+id/acessoPastaFragment"
         android:name="com.example.app.appLite.ui.pastas.AcessoPastasFragment"
         android:label="fragment_acesso_pastas"
         tools:layout="@layout/fragment_acesso_pastas" >

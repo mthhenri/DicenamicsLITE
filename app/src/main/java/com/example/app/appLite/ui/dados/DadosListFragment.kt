@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app.databinding.FragmentDadosListBinding
+import com.example.app.login.CadastroViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -21,14 +22,17 @@ class DadosListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val viewModel: DadosViewModel by activityViewModels()
+        val viewModelUser : CadastroViewModel by activityViewModels()
         val binding = FragmentDadosListBinding.inflate(layoutInflater)
         val recyclerView = binding.root
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.dados.collect { dados ->
+                    val userId = viewModelUser.usuario.userId.toInt()
+                    val dadosFiltrados = dados.filter { it.usuarioDadosId.toInt() == userId }
                     recyclerView.layoutManager = LinearLayoutManager(context)
-                    recyclerView.adapter = DadosAdapter(dados, viewModel)
+                    recyclerView.adapter = DadosAdapter(dadosFiltrados, viewModel)
                 }
             }
         }

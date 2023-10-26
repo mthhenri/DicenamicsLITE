@@ -12,14 +12,17 @@ import javax.inject.Inject
 @HiltViewModel
 class PastasViewModel  @Inject constructor(val repository: PastaRepository) : ViewModel() {
     var pasta : Pasta = Pasta()
+    var ultimaPasta : Pasta = Pasta()
 
     private var _pastas = MutableStateFlow(listOf<Pasta>())
     val pastas : Flow<List<Pasta>> = _pastas
 
     init {
         viewModelScope.launch {
-            repository.pastas.collect {pasta ->
-                _pastas.value = pasta
+            repository.pastas.collect {pastas ->
+                val userId = pasta.usuarioPastaId.toInt()
+                val pastasFilter = pastas.filter { it.usuarioPastaId.toInt() == userId }
+                _pastas.value = pastasFilter
             }
         }
     }
@@ -42,6 +45,10 @@ class PastasViewModel  @Inject constructor(val repository: PastaRepository) : Vi
 
     fun excluirPorNome(pasta: Pasta) = viewModelScope.launch{
         repository.excluirPorNome(pasta.nome)
+    }
+
+    fun buscarultimo() = viewModelScope.launch {
+        ultimaPasta = repository.buscarUltimo()
     }
 
 }
