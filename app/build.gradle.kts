@@ -5,6 +5,7 @@ plugins {
     id("androidx.navigation.safeargs")
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
+    //Implementação para Firebase
     id("com.google.gms.google-services")
 }
 
@@ -64,5 +65,9 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.47")
     ksp("com.google.dagger:hilt-compiler:2.47")
 
-    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    //Implementações da Firebase
+    implementation ("com.google.firebase:firebase-bom:32.3.1")
+    implementation ("com.google.firebase:firebase-firestore-ktx")
+    implementation ("com.google.firebase:firebase-storage-ktx")
+    implementation ("io.coil-kt:coil:2.4.0")
 }
