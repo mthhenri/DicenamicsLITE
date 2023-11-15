@@ -11,6 +11,10 @@ import com.example.app.data.repository.DadoRepository
 import com.example.app.data.repository.DadoSpeedRepository
 import com.example.app.data.repository.PastaRepository
 import com.example.app.data.repository.UsuarioRepository
+import com.example.app.data.repositorySqlite.DadoRepositorySqlite
+import com.example.app.data.repositorySqlite.DadoSpeedRepositorySqlite
+import com.example.app.data.repositorySqlite.PastaRepositorySqlite
+import com.example.app.data.repositorySqlite.UsuarioRepositorySqlite
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,23 +29,23 @@ import javax.inject.Singleton
 class AppDicenamicsLite : Application() {
 
     @Provides
-    fun provideDadoSpeedRepository(dadoSpeedDao: DadoSpeedDao) : DadoSpeedRepository {
-        return DadoSpeedRepository(dadoSpeedDao)
+    fun provideDadoSpeedRepository(dadoSpeedDao: DadoSpeedDao) : DadoSpeedRepositorySqlite {
+        return DadoSpeedRepositorySqlite(dadoSpeedDao)
     }
 
     @Provides
-    fun providesDadoRepository(dadoDao: DadoDao) : DadoRepository {
-        return DadoRepository(dadoDao)
+    fun providesDadoRepository(dadoDao: DadoDao) : DadoRepositorySqlite {
+        return DadoRepositorySqlite(dadoDao)
     }
 
     @Provides
-    fun providesUsuarioRepository(usuarioDao: UsuarioDao) : UsuarioRepository {
-        return UsuarioRepository(usuarioDao)
+    fun providesUsuarioRepository(usuarioDao: UsuarioDao) : UsuarioRepositorySqlite {
+        return UsuarioRepositorySqlite(usuarioDao)
     }
 
     @Provides
-    fun providePastaRepository(pastaDao: PastaDao) : PastaRepository {
-        return PastaRepository(pastaDao)
+    fun providePastaRepository(pastaDao: PastaDao) : PastaRepositorySqlite {
+        return PastaRepositorySqlite(pastaDao)
     }
 
     @Provides

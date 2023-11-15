@@ -6,27 +6,14 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 
-class DadoRepository @Inject constructor(val dadoDao: DadoDao){
+interface DadoRepository {
 
-    val dados: Flow<List<Dado>> get() = dadoDao.listar()
+    val dados: Flow<List<Dado>>
 
-    suspend fun salvar(dado: Dado) {
-        if (dado.dadoId == 0){
-            dadoDao.adicionar(dado)
-        } else {
-            dadoDao.atualizar(dado)
-        }
-    }
+    suspend fun salvar(dado: Dado)
+    suspend fun excluirPorId(dadoId: Int)
 
-    suspend fun excluirPorId(dadoId: Int){
-            dadoDao.deletarById(dadoId)
-    }
+    suspend fun excluirPorNome(dadoNome: String)
 
-    suspend fun excluirPorNome(dadoNome: String){
-        dadoDao.deletarByNome(dadoNome)
-    }
-
-    suspend fun buscarUltimo() : Dado {
-        return dadoDao.buscarUltimo()
-    }
+    suspend fun buscarUltimo() : Dado
 }

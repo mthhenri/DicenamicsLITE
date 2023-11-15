@@ -5,28 +5,15 @@ import com.example.app.data.models.Pasta
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class PastaRepository @Inject
-constructor(val pastaDao: PastaDao) {
+interface PastaRepository {
 
-    val pastas: Flow<List<Pasta>> get() = pastaDao.listar()
+    val pastas: Flow<List<Pasta>>
 
-    suspend fun salvar(pasta: Pasta) {
-        if (pasta.pastaId.toInt() == 0) {
-            pastaDao.adicionar(pasta)
-        } else {
-            pastaDao.atualizar(pasta)
-        }
-    }
+    suspend fun salvar(pasta: Pasta)
 
-    suspend fun excluirPorId(pastaId: Int) {
-        pastaDao.deletarById(pastaId)
-    }
+    suspend fun excluirPorId(pastaId: Int)
 
-    suspend fun excluirPorNome(pastaNome: String) {
-        pastaDao.deletarByNome(pastaNome)
-    }
+    suspend fun excluirPorNome(pastaNome: String)
 
-    suspend fun buscarUltimo() : Pasta {
-        return pastaDao.buscarUltimo()
-    }
+    suspend fun buscarUltimo() : Pasta
 }

@@ -5,20 +5,12 @@ import com.example.app.data.models.Resultados
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class ResultadosRepository @Inject constructor(val resultadosDao: ResultadosDao) {
+interface ResultadosRepository {
 
-    val resultados : Flow<List<Resultados>> get() = resultadosDao.listar()
+    val resultados : Flow<List<Resultados>>
 
-    suspend fun salvar(resultados: Resultados) {
-        if (resultados.resultId == 0){
-            resultadosDao.adicionar(resultados)
-        } else {
-            resultadosDao.atualizar(resultados)
-        }
-    }
+    suspend fun salvar(resultados: Resultados)
 
-    suspend fun excluirPorId(resultadosId: Int){
-        resultadosDao.deletar(resultadosId)
-    }
+    suspend fun excluirPorId(resultadosId: Int)
 
 }

@@ -5,31 +5,17 @@ import com.example.app.data.models.Usuario
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class UsuarioRepository @Inject constructor(val usuarioDao: UsuarioDao) {
+ interface UsuarioRepository {
 
-    val usuarios: Flow<List<Usuario>> get() = usuarioDao.listar()
+    val usuarios: Flow<List<Usuario>>
 
-    suspend fun salvar(usuario: Usuario) {
-        if (usuario.userId == 0) {
-            usuarioDao.adicionar(usuario)
-        } else {
-            usuarioDao.atualizar(usuario)
-        }
-    }
+    suspend fun salvar(usuario: Usuario)
 
-    suspend fun excluirPorId(usuarioId: Int) {
-         usuarioDao.deletarById(usuarioId)
-    }
+    suspend fun excluirPorId(usuarioId: Int)
 
-    suspend fun excluirPorNome(usuarioNome: String) {
-        usuarioDao.deletarByUsername(usuarioNome)
-    }
+    suspend fun excluirPorNome(usuarioNome: String)
 
-    suspend fun  buscarPorUsername(usuarioNome : String) : Usuario? {
-        return usuarioDao.buscarByUsername(usuarioNome)
-    }
+    suspend fun  buscarPorUsername(usuarioNome : String) : Usuario?
 
-    suspend fun  login(username : String, senha : String) : Usuario? {
-        return usuarioDao.login(username, senha)
-    }
+    suspend fun  login(username : String, senha : String) : Usuario?
 }
