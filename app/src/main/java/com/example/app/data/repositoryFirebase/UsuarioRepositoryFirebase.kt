@@ -9,6 +9,24 @@ import javax.inject.Inject
 
 class UsuarioRepositoryFirebase @Inject constructor() {
 
+    init {
+        dadosRef.addSnapshotListener{ snapshot, _ ->
+            if(snapshot != null){
+                var dados = mutableListOf<Dado>()
+                snapshot.documents.forEach{ doc ->
+                    val dado = doc.toObject<Dado>()
+                    if(dado != null){
+                        dado.dadoId = doc.id.toInt()
+                        dados.add(dado)
+                    }
+                }
+                _dados.value = dados
+            } else {
+                _dados = MutableStateFlow(listOf())
+            }
+        }
+    }
+
     private val databaseReference: DatabaseReference by lazy {
         Firebase.database.reference.child("usuarios")
     }
