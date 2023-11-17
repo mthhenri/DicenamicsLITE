@@ -1,10 +1,8 @@
+import com.example.app.data.models.Dado
 import com.google.firebase.firestore.CollectionReference
-import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.toObject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import com.example.app.data.models.Dado
-import com.google.firebase.database.Query
 
 class DadoRepositoryFirebase(private val dadosRef: CollectionReference) {
 
@@ -26,8 +24,7 @@ class DadoRepositoryFirebase(private val dadosRef: CollectionReference) {
     }
 
     suspend fun excluirPorNome(nome: String) {
-        val query: com.google.firebase.firestore.Query = dadosRef.whereEqualTo("nome", nome)
-        val result = query.get().await()
+        val result = dadosRef.whereEqualTo("nome", nome).get().await()
 
         for (document in result.documents) {
             document.reference.delete()
@@ -35,7 +32,8 @@ class DadoRepositoryFirebase(private val dadosRef: CollectionReference) {
     }
 
     suspend fun buscarPorUltimo(): Dado? {
-        val result = dadosRef.orderBy("timestamp", Query.Direction.DESCENDING).limit(1).get().await()
+        val result = dadosRef.orderBy("timestamp", com.google.firebase.firestore.Query.Direction.DESCENDING)
+            .limit(1).get().await()
 
         return if (!result.isEmpty) {
             result.documents[0].toObject(Dado::class.java)
