@@ -5,6 +5,7 @@ plugins {
     id("androidx.navigation.safeargs")
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
+
     //Implementação para Firebase
     id("com.google.gms.google-services")
 }
@@ -55,6 +56,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
     implementation("androidx.recyclerview:recyclerview:1.3.0")
     implementation("com.google.firebase:firebase-database-ktx:20.3.0")
+    implementation("androidx.compose.foundation:foundation-layout-android:1.5.4")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

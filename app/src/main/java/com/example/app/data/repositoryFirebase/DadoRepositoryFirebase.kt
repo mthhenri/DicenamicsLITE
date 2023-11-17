@@ -1,47 +1,46 @@
-package com.example.app.data.repositoryFirebase
-
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.ktx.toObject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import com.example.app.data.models.Dado
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.Query
-import kotlinx.coroutines.tasks.await
-import javax.inject.Inject
 
-class DadoRepositoryFirebase @Inject constructor() {
+class DadoRepositoryFirebase(private val dadosRef: CollectionReference) {
 
-    private val databaseReference: DatabaseReference by lazy {
-        FirebaseDatabase.getInstance().reference.child("dados")
-    }
+    private var _dados = MutableStateFlow(listOf<Dado>())
+    val dados: StateFlow<List<Dado>> = _dados
 
     suspend fun salvar(dado: Dado) {
-        val key = databaseReference.push().key
-        key?.let {
-            dado.dadoId = key
-            databaseReference.child(key).setValue(dado).await()
+        if (dado.id.isNullOrEmpty()) {
+            val doc = dadosRef.document()
+            dado.id = doc.id
+            doc.set(dado)
+        } else {
+            dadosRef.document(dado.id).set(dado)
         }
     }
 
-    suspend fun excluirPorId(dadoId: String) {
-        databaseReference.child(dadoId).removeValue().await()
+    suspend fun excluirPorId(id: String) {
+        dadosRef.document(id).delete()
     }
 
-    suspend fun excluirPorNome(dadoNome: String) {
-        val query: Query = databaseReference.orderByChild("nome").equalTo(dadoNome)
-        val snapshot: DataSnapshot = query.get().await()
+    suspend fun excluirPorNome(nome: String) {
+        val query: com.google.firebase.firestore.Query = dadosRef.whereEqualTo("nome", nome)
+        val result = query.get().await()
 
-        for (childSnapshot in snapshot.children) {
-            childSnapshot.ref.removeValue().await()
+        for (document in result.documents) {
+            document.reference.delete()
         }
     }
 
-    suspend fun buscarUltimo(): Dado {
-        val query: Query = databaseReference.limitToLast(1)
-        val snapshot: DataSnapshot = query.get().await()
+    suspend fun buscarPorUltimo(): Dado? {
+        val result = dadosRef.orderBy("timestamp", Query.Direction.DESCENDING).limit(1).get().await()
 
-        for (childSnapshot in snapshot.children) {
-            return childSnapshot.getValue(Dado::class.java)!!
+        return if (!result.isEmpty) {
+            result.documents[0].toObject(Dado::class.java)
+        } else {
+            null
         }
-        throw NoSuchElementException("Nenhum dado encontrado")
     }
 }
