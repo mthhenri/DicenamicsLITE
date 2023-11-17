@@ -1,16 +1,18 @@
 package com.example.app.data.repositoryFirebase
 
 import com.example.app.data.models.DadoSpeed
+import com.example.app.data.repository.DadoRepository
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class DadoSpeedRepositoryFirebase @Inject constructor() {
+class DadoSpeedRepositoryFirebase @Inject constructor( ) {
 
     init {
-        dados.addSnapshotListener{ snapshot, _ ->
+        dadosRef.addSnapshotListener{ snapshot, _ ->
             if(snapshot != null){
                 var dados = mutableListOf<Dado>()
                 snapshot.documents.forEach{ doc ->

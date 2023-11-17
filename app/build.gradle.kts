@@ -70,7 +70,8 @@ dependencies {
 
     //Implementações da Firebase
     implementation ("com.google.firebase:firebase-bom:32.3.1")
-    implementation ("com.google.firebase:firebase-firestore-ktx")
-    implementation ("com.google.firebase:firebase-storage-ktx")
+    implementation ("com.google.firebase:firebase-firestore-ktx: 23.0.0")
+    implementation ("com.google.firebase:firebase-storage-ktx: 23.0.0")
     implementation ("io.coil-kt:coil:2.4.0")
+    implementation ("com.google.firebase:firebase-firestore:24.9.1")
 }
