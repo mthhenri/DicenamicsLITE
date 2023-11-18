@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class PastaRepositoryFirebase @Inject constructor( private val pastasRef : CollectionReference) : PastaRepository {
+abstract class PastaRepositoryFirebase @Inject constructor(private val pastasRef : CollectionReference) : PastaRepository {
 
     private var _pastas = MutableStateFlow(listOf<Pasta>())
     override val pastas: StateFlow<List<Pasta>> = _pastas.asStateFlow()
@@ -38,7 +38,7 @@ class PastaRepositoryFirebase @Inject constructor( private val pastasRef : Colle
     }
 
 
-    suspend fun salvar(pasta: Pasta) {
+    override suspend fun salvar(pasta: Pasta) {
         if(pasta.pastaId.toString().isNullOrEmpty()) {
             var doc = pastasRef.document()
             pasta.pastaId = doc.id.toLong()
@@ -48,14 +48,11 @@ class PastaRepositoryFirebase @Inject constructor( private val pastasRef : Colle
         }
     }
 
-     suspend fun excluirPorId(pastaId: String) {
-        pastasRef.document(pastaId).delete()
+     override suspend fun excluirPorId(pastaId: Int) {
+        pastasRef.document(pastaId.toString()).delete()
     }
 
     override suspend fun excluirPorNome(pastaNome: String) {
         pastasRef.document(pastaNome).delete()
     }
-
-    suspend fun buscarUltimo(): Pasta {
-        
 }

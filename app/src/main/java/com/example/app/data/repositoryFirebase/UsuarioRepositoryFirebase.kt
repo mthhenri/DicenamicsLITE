@@ -1,79 +1,59 @@
 package com.example.app.data.repositoryFirebase
 
+import com.example.app.data.dao.UsuarioDao
 import com.example.app.data.models.Usuario
+import com.example.app.data.repository.UsuarioRepository
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class UsuarioRepositoryFirebase @Inject constructor() {
+abstract class UsuarioRepositoryFirebase @Inject constructor(private val userRef : CollectionReference) : UsuarioRepository {
+
+    private var _user = MutableStateFlow(listOf<Usuario>())
+    override val usuarios: Flow<List<Usuario>> = _user.asStateFlow()
 
     init {
-        dadosRef.addSnapshotListener{ snapshot, _ ->
-            if(snapshot != null){
-                var dados = mutableListOf<Dado>()
-                snapshot.documents.forEach{ doc ->
-                    val dado = doc.toObject<Dado>()
-                    if(dado != null){
-                        dado.dadoId = doc.id.toInt()
-                        dados.add(dado)
+        userRef.addSnapshotListener { snapshot, _ ->
+            if (snapshot != null) {
+                var users = mutableListOf<Usuario>()
+                snapshot.documents.forEach { doc ->
+                    val user = doc.toObject<Usuario>()
+                    if (user != null) {
+                        user.userId = doc.id.toInt()
+                        users.add(user)
                     }
                 }
-                _dados.value = dados
+                _user.value = users
             } else {
-                _dados = MutableStateFlow(listOf())
+                _user = MutableStateFlow(listOf())
             }
         }
     }
 
-    private val databaseReference: DatabaseReference by lazy {
-        Firebase.database.reference.child("usuarios")
-    }
 
-    suspend fun salvar(usuario: Usuario) {
-        val key = databaseReference.push().key
-        key?.let {
-            usuario.userId = key
-            databaseReference.child(key).setValue(usuario).await()
+    override suspend fun salvar(usuario: Usuario) {
+        if (usuario.userId.toString().isNullOrEmpty()) {
+            var doc = userRef.document()
+            usuario.userId = doc.id.toInt()
+            doc.set(usuario)
+        } else {
+            userRef.document(usuario.userId.toString()).set(usuario)
         }
     }
 
-    suspend fun excluirPorId(usuarioId: String) {
-        databaseReference.child(usuarioId).removeValue().await()
+    override suspend fun excluirPorId(usuarioId: Int) {
+        userRef.document(usuarioId.toString()).delete()
     }
 
-    suspend fun excluirPorNome(usuarioNome: String) {
-        val query: Query = databaseReference.orderByChild("nome").equalTo(usuarioNome)
-        val snapshot: DataSnapshot = query.get().await()
-
-        for (childSnapshot in snapshot.children) {
-            childSnapshot.ref.removeValue().await()
-        }
+    override suspend fun excluirPorNome(usuarioNome: String) {
+        userRef.document(usuarioNome).delete()
     }
 
-    suspend fun buscarPorUsername(usuarioNome: String): Usuario? {
-        val query: Query = databaseReference.orderByChild("username").equalTo(usuarioNome)
-        val snapshot: DataSnapshot = query.get().await()
-
-        for (childSnapshot in snapshot.children) {
-            return childSnapshot.getValue(Usuario::class.java)
-        }
-
-        return null
-    }
-
-    suspend fun login(username: String, senha: String): Usuario? {
-        val query: Query = databaseReference.orderByChild("username").equalTo(username)
-        val snapshot: DataSnapshot = query.get().await()
-
-        for (childSnapshot in snapshot.children) {
-            val usuario = childSnapshot.getValue(Usuario::class.java)
-            if (usuario?.senha == senha) {
-                return usuario
-            }
-        }
-
-        return null
-    }
 }
