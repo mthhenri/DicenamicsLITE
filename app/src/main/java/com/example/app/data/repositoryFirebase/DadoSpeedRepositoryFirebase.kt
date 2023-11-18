@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class DadoSpeedRepositoryFirebase @Inject constructor( private val dadosSpeedRef : CollectionReference ) : DadoSpeedRepository {
+abstract class DadoSpeedRepositoryFirebase @Inject constructor( private val dadosSpeedRef : CollectionReference ) : DadoSpeedRepository {
 
     private var _dadosSpeed = MutableStateFlow(listOf<DadoSpeed>())
     override val dadosSpeed: StateFlow<List<DadoSpeed>> = _dadosSpeed.asStateFlow()
