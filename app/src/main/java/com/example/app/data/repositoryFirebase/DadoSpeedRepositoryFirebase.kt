@@ -1,52 +1,57 @@
 package com.example.app.data.repositoryFirebase
 
+import com.example.app.data.models.Dado
 import com.example.app.data.models.DadoSpeed
 import com.example.app.data.repository.DadoRepository
+import com.example.app.data.repository.DadoSpeedRepository
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class DadoSpeedRepositoryFirebase @Inject constructor( ) {
+class DadoSpeedRepositoryFirebase @Inject constructor( private val dadosSpeedRef : CollectionReference ) : DadoSpeedRepository {
+
+    private var _dadosSpeed = MutableStateFlow(listOf<DadoSpeed>())
+    override val dadosSpeed: StateFlow<List<DadoSpeed>> = _dadosSpeed.asStateFlow()
 
     init {
-        dadosRef.addSnapshotListener{ snapshot, _ ->
-            if(snapshot != null){
-                var dados = mutableListOf<Dado>()
-                snapshot.documents.forEach{ doc ->
-                    val dado = doc.toObject<Dado>()
-                    if(dado != null){
-                        dado.dadoId = doc.id.toInt()
-                        dados.add(dado)
+        dadosSpeedRef.addSnapshotListener { snapshot, _ ->
+            if (snapshot != null) {
+                var dadosSpeed = mutableListOf<DadoSpeed>()
+                snapshot.documents.forEach { doc ->
+                    val dadoSpeed = doc.toObject<DadoSpeed>()
+                    if (dadoSpeed != null) {
+                        dadoSpeed.faces = doc.id.toInt()
+                        dadosSpeed.add(dadoSpeed)
                     }
                 }
-                _dados.value = dados
+                _dadosSpeed.value = dadosSpeed
             } else {
-                _dados = MutableStateFlow(listOf())
+                _dadosSpeed = MutableStateFlow(listOf())
             }
         }
     }
 
-    private val databaseReference: DatabaseReference by lazy {
-        Firebase.database.reference.child("dadosSpeed")
-    }
-
-    suspend fun salvar(dadoSpeed: DadoSpeed) {
-        val key = databaseReference.push().key
-        key?.let {
-            dadoSpeed.faces = key
-            databaseReference.child(key).setValue(dadoSpeed).await()
+    override suspend fun salvar(dadoSpeed: DadoSpeed) {
+        if (dadoSpeed.faces.toString().isNullOrEmpty()) {
+            var doc = dadosSpeedRef.document()
+            dadoSpeed.faces = doc.id.toInt()
+            doc.set(dadoSpeed)
+        } else {
+            dadosSpeedRef.document(dadoSpeed.faces.toString()).set(dadoSpeed)
         }
     }
 
-    suspend fun excluir(dadoFaces: Int) {
-        val query = databaseReference.orderByChild("faces").equalTo(dadoFaces.toDouble())
-        val snapshot = query.get().await()
+    override suspend fun excluir(dadoFaces: Int) {
 
-        for (childSnapshot in snapshot.children) {
-            childSnapshot.ref.removeValue().await()
-        }
+        dadosSpeedRef.document(dadoFaces.toString()).delete()
+
     }
 }
+

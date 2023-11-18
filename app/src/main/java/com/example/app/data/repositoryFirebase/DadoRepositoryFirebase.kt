@@ -2,16 +2,11 @@ package com.example.app.data.repositoryFirebase
 
 import com.example.app.data.models.Dado
 import com.example.app.data.repository.DadoRepository
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.Query
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 abstract class DadoRepositoryFirebase @Inject constructor(private val dadosRef : CollectionReference) :
