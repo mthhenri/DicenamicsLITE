@@ -7,6 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import com.example.app.appLite.ui.dados.DadosViewModel
 import com.example.app.appLite.ui.speedDados.RolagemRapidaViewModel
 import com.example.app.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,5 +24,8 @@ class MainActivity : AppCompatActivity() {
         val viewModelRR : RolagemRapidaViewModel by viewModels()
         val viewModelD : DadosViewModel by viewModels()
 
+        fun db(){
+               FirebaseApp.initializeApp(this)
+        }
     }
 }
