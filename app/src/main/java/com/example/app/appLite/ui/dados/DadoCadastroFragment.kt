@@ -25,7 +25,7 @@ class DadoCadastroFragment : Fragment() {
 
         val dadoNovo = viewModel.dado
 
-        binding.textIconDadoCriar.setText(dadoNovo.icon)
+        binding.dadoCadastroSpinner
         binding.textNomeDadoCriar.setText(dadoNovo.nome)
         binding.textFacesDadoCriar.setText(dadoNovo.faces.toString())
         binding.textQuantidadeDadoCriar.setText(dadoNovo.quantidade.toString())

@@ -10,9 +10,7 @@ import javax.inject.Inject
 
 class DadoRepositorySqlite @Inject constructor(val dadoDao: DadoDao){
 
-    val ctxDado : DadoDao =
     val dados: Flow<List<Dado>> get() = dadoDao.listar()
-    val dbHelper = SQLiteOpenHelper(, "bancoDados.db",null, 1)
 
     suspend fun salvar(dado: Dado) {
         if (dado.dadoId == 0){

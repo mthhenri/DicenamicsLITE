@@ -59,19 +59,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <EditText
-        android:id="@+id/textIconDadoCriar"
-        android:layout_width="275dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="48dp"
-        android:backgroundTint="#000000"
-        android:ems="10"
-        android:hint="Icone"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/textNomeDadoCriar"
-        app:layout_constraintStart_toEndOf="@+id/nome" />
-
-    <EditText
         android:id="@+id/textNomeDadoCriar"
         android:layout_width="275dp"
         android:layout_height="50dp"
@@ -201,5 +188,14 @@
             android:scaleType="fitCenter"
             android:src="@drawable/user_menu" />
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/dadoCadastroSpinner"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/textNomeDadoCriar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
