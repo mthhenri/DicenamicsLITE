@@ -24,8 +24,5 @@ class MainActivity : AppCompatActivity() {
         val viewModelRR : RolagemRapidaViewModel by viewModels()
         val viewModelD : DadosViewModel by viewModels()
 
-        fun db(){
-               FirebaseApp.initializeApp(this)
-        }
     }
 }

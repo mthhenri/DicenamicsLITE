@@ -7,6 +7,7 @@ import com.example.app.data.dao.DadoSpeedDao
 import com.example.app.data.dao.PastaDao
 import com.example.app.data.dao.UsuarioDao
 import com.example.app.data.database.BancoSQLite
+import com.example.app.data.models.DadoSpeed
 import com.example.app.data.repository.DadoRepository
 import com.example.app.data.repository.DadoSpeedRepository
 import com.example.app.data.repository.PastaRepository
@@ -15,6 +16,11 @@ import com.example.app.data.repositorySqlite.DadoRepositorySqlite
 import com.example.app.data.repositorySqlite.DadoSpeedRepositorySqlite
 import com.example.app.data.repositorySqlite.PastaRepositorySqlite
 import com.example.app.data.repositorySqlite.UsuarioRepositorySqlite
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.firestoreSettings
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,23 +35,49 @@ import javax.inject.Singleton
 class AppDicenamicsLite : Application() {
 
     @Provides
-    fun provideDadoSpeedRepository(dadoSpeedDao: DadoSpeedDao) : DadoSpeedRepositorySqlite {
-        return DadoSpeedRepositorySqlite(dadoSpeedDao)
+    fun provideDadoSpeedRepository() : CollectionReference {
+
+        val firestore = Firebase.firestore
+        val settings = firestoreSettings {
+            this.isPersistenceEnabled = false
+        }
+        firestore.firestoreSettings = settings
+
+        return firestore.collection("DadoSpeed")
     }
 
     @Provides
-    fun providesDadoRepository(dadoDao: DadoDao) : DadoRepositorySqlite {
-        return DadoRepositorySqlite(dadoDao)
+    fun providesDadoRepository() : CollectionReference {
+
+        val firestore = Firebase.firestore
+        val settings = firestoreSettings {
+            this.isPersistenceEnabled = false
+        }
+        firestore.firestoreSettings = settings
+
+        return firestore.collection("Dado")
     }
 
     @Provides
-    fun providesUsuarioRepository(usuarioDao: UsuarioDao) : UsuarioRepositorySqlite {
-        return UsuarioRepositorySqlite(usuarioDao)
+    fun providesUsuarioRepository() : CollectionReference {
+        val firestore = Firebase.firestore
+        val settings = firestoreSettings {
+            this.isPersistenceEnabled = false
+        }
+        firestore.firestoreSettings = settings
+
+        return firestore.collection("Usuario")
     }
 
     @Provides
-    fun providePastaRepository(pastaDao: PastaDao) : PastaRepositorySqlite {
-        return PastaRepositorySqlite(pastaDao)
+    fun providePastaRepository() : CollectionReference {
+        val firestore = Firebase.firestore
+        val settings = firestoreSettings {
+            this.isPersistenceEnabled = false
+        }
+        firestore.firestoreSettings = settings
+
+        return firestore.collection("Pasta")
     }
 
     @Provides

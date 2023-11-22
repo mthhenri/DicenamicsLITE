@@ -29,7 +29,7 @@ abstract class BancoSQLite : RoomDatabase(){
         abstract fun ValoresDao(): ValoresDao
         companion object {
             @Volatile
-            private var BANCO: BancoSQLite? = null
+             var BANCO: BancoSQLite? = null
 
             val Migration_1_2 = object : Migration(1, 2) {
                 override fun migrate(database: SupportSQLiteDatabase) {

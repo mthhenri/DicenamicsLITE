@@ -2,12 +2,14 @@ package com.example.app.data.repositoryFirebase
 
 import com.example.app.data.models.Dado
 import com.example.app.data.repository.DadoRepository
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
+
 
 abstract class DadoRepositoryFirebase @Inject constructor(private val dadosRef : CollectionReference) :
     DadoRepository {
@@ -35,6 +37,7 @@ abstract class DadoRepositoryFirebase @Inject constructor(private val dadosRef :
 
 
     override suspend fun salvar(dado: Dado) {
+
         if (dado.dadoId.toString().isNullOrEmpty()) {
             var doc = dadosRef.document()
             dado.dadoId = doc.id.toInt()
